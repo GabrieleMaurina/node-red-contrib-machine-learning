@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Predictor',{
+        category: 'machine learning',
+        color: '#C7E9C0',
+        defaults: {
+            name: {value:""},
+			model: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"Predictor";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Predictor">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+	<div class="form-row">
+        <label for="node-input-model"><i class="icon-tag"></i>Model</label>
+        <input type="text" id="node-input-model" placeholder="Path to trained model.">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Predictor">
+    <p>A node that, given a trained model, is able to make predictions.</p>
+</script>

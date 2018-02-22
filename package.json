@@ -1,0 +1,34 @@
+{
+  "name": "node-red-machine-learning",
+  "version": "1.0.0",
+  "description": "Machine learning package for node-red.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node-red",
+    "machine learning"
+  ],
+  "author": "Gabriele Maurina",
+  "license": "ISC",
+  "node-red": {
+    "nodes": {
+      "Dataset": "nodes\\dataset\\dataset.js",
+      "Predictor": "nodes\\predictor\\predictor.js",
+      "SupportVectorClassifierTrainer": "nodes\\trainers\\support-vector-classifier\\support-vector-classifier.js",
+      "DecisionTreeClassifierTrainer": "nodes\\trainers\\decision-tree-classifier\\decision-tree-classifier.js",
+      "KNeighborsClassifierTrainer": "nodes\\trainers\\k-neighbors-classifier\\k-neighbors-classifier.js",
+      "MultiLayerPerceptronClassifier": "nodes\\trainers\\multi-layer-perceptron-classifier\\multi-layer-perceptron-classifier.js"
+    }
+  },
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "path": "^0.12.7",
+    "request": "^2.83.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GabrieleMaurina/node-red-machine-learning.git"
+  }
+}
