@@ -4,7 +4,7 @@ module.exports = function(RED){
 		const path = require('path');
 		const {execSync} = require('child_process');
 		const pythonScript = '..\\..\\python\\trainer.py';
-		const conf = '..\\..\\python\\config';
+		const conf = '..\\..\\python\\config_';
 		const ext = '.json';
 		
         RED.nodes.createNode(this,config);
