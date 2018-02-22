@@ -1,22 +1,21 @@
 <script type="text/javascript">
-    RED.nodes.registerType('KNeighborsClassifierTrainer',{
+    RED.nodes.registerType('Trainer',{
         category: 'machine learning',
-        color: '#DAC4B4',
+        color: '#FDF0C2',
         defaults: {
             name: {value:""},
-			save: {value:""},
-			neighbors: {value:"3", type:"int"}
+			save: {value:""}
         },
         inputs:1,
         outputs:1,
         icon: "file.png",
         label: function() {
-            return this.name||"KNeighborsClassifierTrainer";
+            return this.name||"Trainer";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="KNeighborsClassifierTrainer">
+<script type="text/x-red" data-template-name="Trainer">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i>Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -25,12 +24,8 @@
         <label for="node-input-save"><i class="icon-tag"></i>Save</label>
         <input type="text" id="node-input-save" placeholder="Path to save model.">
     </div>
-	<div class="form-row">
-        <label for="node-input-neighbors"><i class="icon-tag"></i>Neighbors</label>
-        <input type="number" id="node-input-neighbors" placeholder="Number of neighbors.">
-    </div>
 </script>
 
-<script type="text/x-red" data-help-name="KNeighborsClassifierTrainer">
-    <p>A node that trains a K Neighbors Classifier model.</p>
+<script type="text/x-red" data-help-name="Trainer">
+    <p>A node that trains a model.</p>
 </script>

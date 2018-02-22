@@ -3,7 +3,7 @@ module.exports = function(RED){
 		const path = require('path');
 		const {exec} = require('child_process');
 		const request = require('request');
-		const pythonScript = 'predictor.py';
+		const pythonScript = '..\\..\\python\\predictor.py';
 		const pythonPortKey = 'pythonPort';
 		const pythonPort = 6900;
 		const pythonAddress = 'http://localhost:';
@@ -16,7 +16,7 @@ module.exports = function(RED){
 		globalContext.set(pythonPortKey, node.port + 1);
 		
 		exec('python "' + path.join(__dirname, pythonScript) + '" "' + config.model + '" ' + node.port)
-		node.log('Starting server on port ' + node.port);
+		node.debug('Starting server on port ' + node.port);
 		
         node.on('input', function(msg) {
 			
@@ -26,7 +26,7 @@ module.exports = function(RED){
 				{url: pythonAddress + node.port + '/predict', json: true, body: data, method: 'POST'},
 				(err, res, body) => {
 					msg.payload = body;
-					node.log('Request to ' + node.port + ' with payload ' + JSON.stringify(data) + ' and response ' + JSON.stringify(body));
+					node.debug('Request to ' + node.port + ' with payload ' + JSON.stringify(data) + ' and response ' + JSON.stringify(body));
 					node.send(msg);
 				});
         });
@@ -34,7 +34,7 @@ module.exports = function(RED){
 		node.on('close', function() {
 			globalContext.set(pythonPortKey, null);
 			request.get(pythonAddress + node.port + '/shutdown');
-			node.log('Shutting down server on port ' + node.port);
+			node.debug('Shutting down server on port ' + node.port);
         });
     }
     RED.nodes.registerType("Predictor", PredictorNode);

@@ -16,10 +16,11 @@
     "nodes": {
       "Dataset": "nodes\\dataset\\dataset.js",
       "Predictor": "nodes\\predictor\\predictor.js",
-      "SupportVectorClassifierTrainer": "nodes\\trainers\\support-vector-classifier\\support-vector-classifier.js",
-      "DecisionTreeClassifierTrainer": "nodes\\trainers\\decision-tree-classifier\\decision-tree-classifier.js",
-      "KNeighborsClassifierTrainer": "nodes\\trainers\\k-neighbors-classifier\\k-neighbors-classifier.js",
-      "MultiLayerPerceptronClassifier": "nodes\\trainers\\multi-layer-perceptron-classifier\\multi-layer-perceptron-classifier.js"
+      "Trainer": "nodes\\trainer\\trainer.js",
+      "SupportVectorClassifier": "nodes\\classifiers\\support-vector-classifier\\support-vector-classifier.js",
+      "DecisionTreeClassifier": "nodes\\classifiers\\decision-tree-classifier\\decision-tree-classifier.js",
+      "KNeighborsClassifier": "nodes\\classifiers\\k-neighbors-classifier\\k-neighbors-classifier.js",
+      "MultiLayerPerceptronClassifier": "nodes\\classifiers\\multi-layer-perceptron-classifier\\multi-layer-perceptron-classifier.js"
     }
   },
   "dependencies": {
