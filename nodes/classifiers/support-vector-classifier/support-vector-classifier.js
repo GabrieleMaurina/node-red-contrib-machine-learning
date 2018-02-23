@@ -1,12 +1,14 @@
 module.exports = function(RED){
     function SVCNode(config){
-		const classifier = 'support-vector-classifier.py';
+		RED.nodes.createNode(this,config);
 		
-        RED.nodes.createNode(this,config);
         var node = this;
+		var classifier = {
+			file: 'support-vector-classifier.py'
+		}
 		
         node.on('input', function(msg) {
-			msg.dataset.classifier = classifier;
+			msg.classifier = classifier;
 			node.send(msg);
         });
     }

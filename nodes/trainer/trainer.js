@@ -13,8 +13,13 @@ module.exports = function(RED){
 		node.save = config.save;
 		
         node.on('input', function(msg) {
-			msg.dataset.save = node.save;
-			fs.writeFile(path.join(__dirname, conf + node.id + ext), JSON.stringify(msg.dataset), (err) => {
+			var configuration = {
+				save: node.save,
+				dataset: msg.dataset,
+				classifier: msg.classifier
+			}
+			
+			fs.writeFile(path.join(__dirname, conf + node.id + ext), JSON.stringify(configuration), (err) => {
 				if(err){
 					msg.payload = err;
 				}

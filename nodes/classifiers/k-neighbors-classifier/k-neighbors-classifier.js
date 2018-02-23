@@ -1,15 +1,15 @@
 module.exports = function(RED){
-    function KNCNode(config){
-		const classifier = 'k-neighbors-classifier.py';
-		
+    function KNCNode(config){		
         RED.nodes.createNode(this,config);
-        var node = this;
 		
-		node.neighbors = Number(config.neighbors);
+        var node = this;
+		var classifier = {
+			neighbors: Number(config.neighbors),
+			file: 'k-neighbors-classifier.py'
+		}
 		
         node.on('input', function(msg) {
-			msg.dataset.neighbors = node.neighbors;
-			msg.dataset.classifier = classifier;
+			msg.classifier = classifier;
 			node.send(msg);
         });
     }

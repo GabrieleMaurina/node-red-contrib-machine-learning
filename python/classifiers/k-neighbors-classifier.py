@@ -1,2 +1,2 @@
 from sklearn.neighbors import KNeighborsClassifier
-classifier = KNeighborsClassifier(n_neighbors=dataset['neighbors'])
+classifier = KNeighborsClassifier(n_neighbors=config['classifier']['neighbors'])

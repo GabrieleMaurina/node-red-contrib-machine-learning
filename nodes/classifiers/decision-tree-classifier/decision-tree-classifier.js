@@ -1,15 +1,15 @@
 module.exports = function(RED){
     function DTCNode(config){
-		const classifier = 'decision-tree-classifier.py';
-		
         RED.nodes.createNode(this,config);
-        var node = this;
 		
-		node.depth = Number(config.depth);
+        var node = this;
+		var classifier = {
+			depth: Number(config.depth),
+			file: 'decision-tree-classifier.py'
+		}
 		
         node.on('input', function(msg) {
-			msg.dataset.depth = node.depth;
-			msg.dataset.classifier = classifier;
+			msg.classifier = classifier;
 			node.send(msg);
         });
     }
