@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Assessment',{
+        category: 'machine learning',
+        color: '#E9967A',
+        defaults: {
+            name: {value:"Accuracy"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"Assessment";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Assessment">
+	<div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Type</label>
+		<select id="node-input-name">
+			<option value="Accuracy" selected>Accuracy</option>
+			<option value="Precision">Precision</option>
+			<option value="F1 Score">F1 Score</option>
+		</select>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Assessment">
+    <p>A node that does assessment over a real and a predicted output.</p>
+</script>

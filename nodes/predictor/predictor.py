@@ -6,7 +6,7 @@ model = None
 
 app = Flask(__name__)
 
-@app.route('/test', methods=['GET'])
+@app.route('/', methods=['GET'])
 def test():
 	return 'Server is online.';
 
@@ -22,14 +22,13 @@ def predict():
 		try:
 			model = pickle.load(open(sys.argv[1], "rb"));
 		except:
-			res = 'Cannot load model.'
+			res = ('Cannot load model.', 400)
 	
 	if model:	
 		try:
 			res = jsonify(model.predict(request.json).tolist())
 		except:
-			res = 'Wrong input format.'
-	
+			res = ('Wrong input format.', 400)
 	return res
 
 def shutdown_server():

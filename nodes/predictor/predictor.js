@@ -1,9 +1,15 @@
 module.exports = function(RED){
     function PredictorNode(config){
+		
+		const READY = {fill:'blue',shape:'dot',text:'ready'};
+		const PROCESSING = {fill:'yellow',shape:'dot',text:'processing'};
+		const PREDICTED = {fill:'green',shape:'dot',text:'predicted'};
+		const ERROR = {fill:'red',shape:'dot',text:'error'};
+		
 		const path = require('path');
 		const {exec} = require('child_process');
 		const request = require('request');
-		const pythonScript = '..\\..\\python\\predictor.py';
+		const pythonScript = 'predictor.py';
 		const pythonPortKey = 'pythonPort';
 		const pythonPort = 6900;
 		const pythonAddress = 'http://localhost:';
@@ -18,17 +24,33 @@ module.exports = function(RED){
 		exec('python "' + path.join(__dirname, pythonScript) + '" "' + config.model + '" ' + node.port)
 		node.debug('Starting server on port ' + node.port);
 		
+		node.status(READY);
         node.on('input', function(msg) {
-			
+			node.status(PROCESSING);
 			var data = msg.payload;
 			
-			request(
-				{url: pythonAddress + node.port + '/predict', json: true, body: data, method: 'POST'},
-				(err, res, body) => {
-					msg.payload = body;
-					node.debug('Request to ' + node.port + ' with payload ' + JSON.stringify(data) + ' and response ' + JSON.stringify(body));
-					node.send(msg);
-				});
+			request({
+						url: pythonAddress + node.port + '/predict',
+						json: true,
+						body: data,
+						method: 'POST'
+					},(err, res, body) => {
+						if(err){
+							msg.payload = err;
+							node.status(ERROR);
+							node.send(msg);
+						}
+						else{
+							msg.payload = body;
+							if(res.statusCode == 200){
+								node.status(PREDICTED);
+							}
+							else{
+								node.status(ERROR);
+							}
+							node.send(msg);
+						}
+					});
         });
 		
 		node.on('close', function() {

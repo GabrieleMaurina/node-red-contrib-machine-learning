@@ -1,17 +1,16 @@
 module.exports = function(RED){
     function DTCNode(config){
-        RED.nodes.createNode(this,config);
+        const trainer = require('..\\utils\\trainer.js');
 		
         var node = this;
-		var classifier = {
+		
+		node.config = {
 			depth: Number(config.depth),
+			save: config.save,
 			file: 'decision-tree-classifier.py'
 		}
 		
-        node.on('input', function(msg) {
-			msg.classifier = classifier;
-			node.send(msg);
-        });
+        trainer(RED, node, config);
     }
     RED.nodes.registerType("DecisionTreeClassifier", DTCNode);
 }

@@ -3,7 +3,8 @@
         category: 'machine learning',
         color: '#DAC4B4',
         defaults: {
-            name: {value:""}
+            name: {value:""},
+			save: {value:""}
         },
         inputs:1,
         outputs:1,
@@ -19,8 +20,12 @@
         <label for="node-input-name"><i class="icon-tag"></i>Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
+	<div class="form-row">
+        <label for="node-input-save"><i class="icon-tag"></i>Save path</label>
+        <input type="text" id="node-input-save" placeholder="Save path">
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="MultiLayerPerceptronClassifier">
-    <p>A node that tells the trainer to use a Multi Layer Perceptron Classifier.</p>
+    <p>A node that trains a Multi Layer Perceptron Classifier model.</p>
 </script>

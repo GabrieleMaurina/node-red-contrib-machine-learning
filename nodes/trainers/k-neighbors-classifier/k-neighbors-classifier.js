@@ -1,17 +1,16 @@
 module.exports = function(RED){
     function KNCNode(config){		
-        RED.nodes.createNode(this,config);
+        const trainer = require('..\\utils\\trainer.js');
 		
         var node = this;
-		var classifier = {
+		
+		node.config = {
 			neighbors: Number(config.neighbors),
+			save: config.save,
 			file: 'k-neighbors-classifier.py'
 		}
 		
-        node.on('input', function(msg) {
-			msg.classifier = classifier;
-			node.send(msg);
-        });
+        trainer(RED, node, config);
     }
     RED.nodes.registerType("KNeighborsClassifier", KNCNode);
 }

@@ -4,6 +4,7 @@
         color: '#DAC4B4',
         defaults: {
             name: {value:""},
+			save: {value:""},
 			depth: {value:"20", type:"int"}
         },
         inputs:1,
@@ -21,11 +22,15 @@
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 	<div class="form-row">
+        <label for="node-input-save"><i class="icon-tag"></i>Save path</label>
+        <input type="text" id="node-input-save" placeholder="Save path">
+    </div>
+	<div class="form-row">
         <label for="node-input-depth"><i class="icon-tag"></i>Depth</label>
         <input type="number" id="node-input-depth" placeholder="Max depth of the tree.">
     </div>
 </script>
 
 <script type="text/x-red" data-help-name="DecisionTreeClassifier">
-    <p>A node that tells the trainer to use a Decision Tree Classifier.</p>
+    <p>A node that trains a Decision Tree Classifier model.</p>
 </script>

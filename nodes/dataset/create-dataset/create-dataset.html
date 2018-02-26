@@ -1,0 +1,66 @@
+<script type="text/javascript">
+    RED.nodes.registerType('CreateDataset',{
+        category: 'machine learning',
+        color: '#E2D96E',
+        defaults: {
+            name: {value:""},
+			path: {value:""},
+			saveFolder: {value:""},
+			saveName: {value:""},
+			input: {value:""},
+			output: {value:"", type:"int"},
+			trainingPartition: {value:"100", type:"int"},
+			shuffle: {value: "", type:"boolean"},
+			seed: {value: "1", type:"int"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"CreateDataset";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="CreateDataset">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+	<div class="form-row">
+        <label for="node-input-path"><i class="icon-tag"></i>Path</label>
+        <input type="text" id="node-input-path" placeholder="Path to dataset">
+    </div>
+	<div class="form-row">
+        <label for="node-input-saveFolder"><i class="icon-tag"></i>Save folder</label>
+        <input type="text" id="node-input-saveFolder" placeholder="Save folder">
+    </div>
+	<div class="form-row">
+        <label for="node-input-saveName"><i class="icon-tag"></i>Save name</label>
+        <input type="text" id="node-input-saveName" placeholder="Save name">
+    </div>
+	<div class="form-row">
+        <label for="node-input-input"><i class="icon-tag"></i>Input</label>
+        <input type="text" id="node-input-input" placeholder="Input columns numbers">
+    </div>
+	<div class="form-row">
+        <label for="node-input-output"><i class="icon-tag"></i>Output</label>
+        <input type="number" id="node-input-output" placeholder="Output column number">
+    </div>
+	<div class="form-row">
+        <label for="node-input-trainingPartition"><i class="icon-tag"></i>Training partition</label>
+        <input type="number" id="node-input-trainingPartition" placeholder="Training partition in % of dataset">
+    </div>
+	<div class="form-row">
+        <label for="node-input-shuffle"><i class="icon-tag"></i>Shuffle dataset</label>
+        <input type="checkbox" id="node-input-shuffle">
+    </div>
+	<div class="form-row">
+        <label for="node-input-seed"><i class="icon-tag"></i>Seed</label>
+        <input type="number" id="node-input-seed" placeholder="seed">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="CreateDataset">
+    <p>A node that loads a csv file and divides it into a training and a test partition.</p>
+</script>
