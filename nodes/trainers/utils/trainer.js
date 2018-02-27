@@ -13,8 +13,11 @@ module.exports = (RED, node, config) => {
 	
 	
     RED.nodes.createNode(node, config);
+	var basePath = node.context().global.get('basePath') || '';
 	
 	node.path = path.join(__dirname, file + node.id + ext)
+	
+	node.config.save = path.join(basePath, config.savePath, config.saveName);
 	
 	node.status(READY);
 	var running = false;

@@ -15,10 +15,12 @@ module.exports = function(RED){
 		
 		RED.nodes.createNode(this,config);
 		
+		var basePath = this.context().global.get('basePath') || '';
+		
         var node = this;
 		node.config = {
-			path: config.path,
-			save: path.join(config.saveFolder, config.saveName),
+			path: path.join(basePath, config.path),
+			save: path.join(basePath, config.saveFolder, config.saveName),
 			input: config.input.replace(' ', '').split(',').map(Number),
 			output: Number(config.output),
 			trainingPartition: Number(config.trainingPartition)/100.0,

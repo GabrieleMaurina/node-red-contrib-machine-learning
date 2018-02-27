@@ -11,8 +11,10 @@ module.exports = function(RED){
 		
         RED.nodes.createNode(this,config);
 		
+		var basePath = this.context().global.get('basePath') || '';
+		
         var node = this;
-		node.path = path.join(config.datasetFolder, config.datasetName, config.partition || 'train.json');
+		node.path = path.join(basePath, config.datasetFolder, config.datasetName, config.partition || 'train.json');
 		node.input = Boolean(config.input);
 		node.output = Boolean(config.output);
 		

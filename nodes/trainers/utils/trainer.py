@@ -23,7 +23,12 @@ try:
 	exec(open(dir + '\\classifiers\\' + training['config']['file']).read())
 	classifier.fit(x, y)
 
-	pickle.dump(classifier, open(training['config']['save'], "wb"));
+	save = training['config']['save']
+	dir = os.path.dirname(save)
+	if not os.path.isdir(dir):
+		os.makedirs(dir, exist_ok=True)
+		
+	pickle.dump(classifier, open(save, "wb"));
 except:
 	print('Cannot complete training.', file=sys.stderr)
 	exit(1)

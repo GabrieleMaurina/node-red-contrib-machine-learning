@@ -1,13 +1,11 @@
 module.exports = function(RED){
     function SupportVectorClassifierNode(config){
-		
 		const trainer = require('..\\utils\\trainer.js');
 		
         var node = this;
 		
 		node.config = {
-			file: 'support-vector-classifier.py',
-			save: config.save
+			file: 'support-vector-classifier.py'
 		};
 		
 		trainer(RED, node, config);

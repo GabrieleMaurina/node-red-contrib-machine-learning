@@ -5,8 +5,7 @@ module.exports = function(RED){
         var node = this;
 		
 		node.config = {
-			file: 'multi-layer-perceptron-classifier.py',
-			save: config.save
+			file: 'multi-layer-perceptron-classifier.py'
 		}
 		
         trainer(RED, node, config);

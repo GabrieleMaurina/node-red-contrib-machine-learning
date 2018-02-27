@@ -1,0 +1,401 @@
+[
+    {
+        "id": "b7756c7d.e0ca4",
+        "type": "inject",
+        "z": "2596437b.20a09c",
+        "name": "Create",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 40,
+        "wires": [
+            [
+                "7528c94d.bf9b38"
+            ]
+        ]
+    },
+    {
+        "id": "64090882.4318a8",
+        "type": "inject",
+        "z": "2596437b.20a09c",
+        "name": "Load",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "381b408f.6c035"
+            ]
+        ]
+    },
+    {
+        "id": "2661d503.e5976a",
+        "type": "debug",
+        "z": "2596437b.20a09c",
+        "name": "Print",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 550,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "7528c94d.bf9b38",
+        "type": "CreateDataset",
+        "z": "2596437b.20a09c",
+        "name": "",
+        "path": "iris.data",
+        "saveFolder": "dataset",
+        "saveName": "iris",
+        "input": "0,1,2,3",
+        "output": "4",
+        "trainingPartition": "80",
+        "shuffle": true,
+        "seed": "454356",
+        "x": 340,
+        "y": 40,
+        "wires": [
+            [
+                "2661d503.e5976a"
+            ]
+        ]
+    },
+    {
+        "id": "381b408f.6c035",
+        "type": "LoadDataset",
+        "z": "2596437b.20a09c",
+        "name": "",
+        "datasetFolder": "dataset",
+        "datasetName": "iris",
+        "partition": "train.json",
+        "input": true,
+        "output": true,
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "b56689de.ede578",
+                "78dd2d4e.ce6204",
+                "a8c7615b.f6697",
+                "b67c470a.0ce188"
+            ]
+        ]
+    },
+    {
+        "id": "b56689de.ede578",
+        "type": "SupportVectorClassifier",
+        "z": "2596437b.20a09c",
+        "name": "",
+        "savePath": "models",
+        "saveName": "svc.b",
+        "x": 550,
+        "y": 100,
+        "wires": [
+            [
+                "3919f5c0.e4953a"
+            ]
+        ]
+    },
+    {
+        "id": "78dd2d4e.ce6204",
+        "type": "DecisionTreeClassifier",
+        "z": "2596437b.20a09c",
+        "name": "",
+        "savePath": "models",
+        "saveName": "dtc.b",
+        "depth": "20",
+        "x": 540,
+        "y": 160,
+        "wires": [
+            [
+                "3919f5c0.e4953a"
+            ]
+        ]
+    },
+    {
+        "id": "a8c7615b.f6697",
+        "type": "KNeighborsClassifier",
+        "z": "2596437b.20a09c",
+        "name": "",
+        "savePath": "models",
+        "saveName": "knc.b",
+        "neighbors": "3",
+        "x": 560,
+        "y": 220,
+        "wires": [
+            [
+                "3919f5c0.e4953a"
+            ]
+        ]
+    },
+    {
+        "id": "b67c470a.0ce188",
+        "type": "MultiLayerPerceptronClassifier",
+        "z": "2596437b.20a09c",
+        "name": "",
+        "savePath": "models",
+        "saveName": "mlpc.b",
+        "x": 530,
+        "y": 280,
+        "wires": [
+            [
+                "3919f5c0.e4953a"
+            ]
+        ]
+    },
+    {
+        "id": "3be0f3b.30f5a0c",
+        "type": "Predictor",
+        "z": "2596437b.20a09c",
+        "name": "SVC",
+        "modelPath": "models",
+        "modelName": "svc.b",
+        "x": 450,
+        "y": 340,
+        "wires": [
+            [
+                "cd5ea885.687a28"
+            ],
+            [
+                "5f65f8b5.2ed1c8"
+            ]
+        ]
+    },
+    {
+        "id": "c67c8bc9.ca6218",
+        "type": "Predictor",
+        "z": "2596437b.20a09c",
+        "name": "DTC",
+        "modelPath": "models",
+        "modelName": "dtc.b",
+        "x": 450,
+        "y": 400,
+        "wires": [
+            [
+                "cd5ea885.687a28"
+            ],
+            [
+                "5f65f8b5.2ed1c8"
+            ]
+        ]
+    },
+    {
+        "id": "6508dce4.af1cd4",
+        "type": "Predictor",
+        "z": "2596437b.20a09c",
+        "name": "KNC",
+        "modelPath": "models",
+        "modelName": "knc.b",
+        "x": 450,
+        "y": 460,
+        "wires": [
+            [
+                "cd5ea885.687a28"
+            ],
+            [
+                "5f65f8b5.2ed1c8"
+            ]
+        ]
+    },
+    {
+        "id": "d3a00717.48c988",
+        "type": "Predictor",
+        "z": "2596437b.20a09c",
+        "name": "MLPC",
+        "modelPath": "models",
+        "modelName": "mlpc.b",
+        "x": 450,
+        "y": 520,
+        "wires": [
+            [
+                "cd5ea885.687a28"
+            ],
+            [
+                "5f65f8b5.2ed1c8"
+            ]
+        ]
+    },
+    {
+        "id": "8d1ab81c.7994d8",
+        "type": "inject",
+        "z": "2596437b.20a09c",
+        "name": "Test",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 90,
+        "y": 500,
+        "wires": [
+            [
+                "9182ba22.6ffa48",
+                "d220d46f.af81a8"
+            ]
+        ]
+    },
+    {
+        "id": "9182ba22.6ffa48",
+        "type": "LoadDataset",
+        "z": "2596437b.20a09c",
+        "name": "",
+        "datasetFolder": "dataset",
+        "datasetName": "iris",
+        "partition": "test.json",
+        "input": true,
+        "output": false,
+        "x": 270,
+        "y": 420,
+        "wires": [
+            [
+                "3be0f3b.30f5a0c",
+                "c67c8bc9.ca6218",
+                "6508dce4.af1cd4",
+                "d3a00717.48c988"
+            ]
+        ]
+    },
+    {
+        "id": "c244d282.f5009",
+        "type": "Assessment",
+        "z": "2596437b.20a09c",
+        "name": "Accuracy",
+        "x": 680,
+        "y": 580,
+        "wires": [
+            [
+                "789f1b6d.517314"
+            ]
+        ]
+    },
+    {
+        "id": "789f1b6d.517314",
+        "type": "debug",
+        "z": "2596437b.20a09c",
+        "name": "Print",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 830,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "19868040.1750f",
+        "type": "change",
+        "z": "2596437b.20a09c",
+        "name": "Real topic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "real",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 580,
+        "wires": [
+            [
+                "c244d282.f5009"
+            ]
+        ]
+    },
+    {
+        "id": "cd5ea885.687a28",
+        "type": "change",
+        "z": "2596437b.20a09c",
+        "name": "Predicted topic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "predicted",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 460,
+        "wires": [
+            [
+                "c244d282.f5009"
+            ]
+        ]
+    },
+    {
+        "id": "d220d46f.af81a8",
+        "type": "LoadDataset",
+        "z": "2596437b.20a09c",
+        "name": "",
+        "datasetFolder": "dataset",
+        "datasetName": "iris",
+        "partition": "test.json",
+        "input": false,
+        "output": true,
+        "x": 270,
+        "y": 580,
+        "wires": [
+            [
+                "19868040.1750f"
+            ]
+        ]
+    },
+    {
+        "id": "3919f5c0.e4953a",
+        "type": "debug",
+        "z": "2596437b.20a09c",
+        "name": "Print",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 790,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "5f65f8b5.2ed1c8",
+        "type": "debug",
+        "z": "2596437b.20a09c",
+        "name": "Print Error",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 710,
+        "y": 400,
+        "wires": []
+    }
+]

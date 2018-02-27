@@ -6,7 +6,6 @@ module.exports = function(RED){
 		
 		node.config = {
 			depth: Number(config.depth),
-			save: config.save,
 			file: 'decision-tree-classifier.py'
 		}
 		

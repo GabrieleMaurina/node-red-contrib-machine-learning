@@ -39,7 +39,7 @@ except:
 
 try:
 	if not os.path.isdir(config['save']):
-		os.mkdir(config['save'])
+		os.makedirs(config['save'], exist_ok=True)
 		
 	out_train = open(config['save'] + '\\train.json', 'w')
 	out_test = open(config['save'] + '\\test.json', 'w')

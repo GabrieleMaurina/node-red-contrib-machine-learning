@@ -6,7 +6,6 @@ module.exports = function(RED){
 		
 		node.config = {
 			neighbors: Number(config.neighbors),
-			save: config.save,
 			file: 'k-neighbors-classifier.py'
 		}
 		

@@ -21,7 +21,9 @@ module.exports = function(RED){
 		node.port = globalContext.get(pythonPortKey) || pythonPort;
 		globalContext.set(pythonPortKey, node.port + 1);
 		
-		exec('python "' + path.join(__dirname, pythonScript) + '" "' + config.model + '" ' + node.port)
+		var basePath = this.context().global.get('basePath') || '';
+		
+		exec('python "' + path.join(__dirname, pythonScript) + '" "' + path.join(basePath, config.modelPath, config.modelName) + '" ' + node.port)
 		node.debug('Starting server on port ' + node.port);
 		
 		node.status(READY);
@@ -35,20 +37,26 @@ module.exports = function(RED){
 						body: data,
 						method: 'POST'
 					},(err, res, body) => {
+						
+						var output = [];
+						
 						if(err){
 							msg.payload = err;
 							node.status(ERROR);
-							node.send(msg);
+							output = [null, msg];
+							node.send(output);
 						}
 						else{
 							msg.payload = body;
 							if(res.statusCode == 200){
 								node.status(PREDICTED);
+								output = [msg, null];
 							}
 							else{
 								node.status(ERROR);
+								output = [null, msg];
 							}
-							node.send(msg);
+							node.send(output);
 						}
 					});
         });
