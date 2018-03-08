@@ -17,7 +17,7 @@
       "CreateDataset": "nodes\\dataset\\create-dataset\\create-dataset.js",
       "LoadDataset": "nodes\\dataset\\load-dataset\\load-dataset.js",
       "Predictor": "nodes\\predictor\\predictor.js",
-	  "Assessment": "nodes\\assessment\\assessment.js",
+      "Assessment": "nodes\\assessment\\assessment.js",
       "SupportVectorClassifier": "nodes\\trainers\\support-vector-classifier\\support-vector-classifier.js",
       "DecisionTreeClassifier": "nodes\\trainers\\decision-tree-classifier\\decision-tree-classifier.js",
       "KNeighborsClassifier": "nodes\\trainers\\k-neighbors-classifier\\k-neighbors-classifier.js",

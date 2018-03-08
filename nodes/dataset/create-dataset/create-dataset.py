@@ -2,7 +2,6 @@ import json
 import pandas
 import os
 import sys
-import json
 
 try:
 	dir = os.path.split(os.path.abspath(__file__))[0]
