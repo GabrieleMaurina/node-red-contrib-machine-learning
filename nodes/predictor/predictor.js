@@ -62,10 +62,11 @@ module.exports = function(RED){
 					});
         });
 
-		node.on('close', function() {
+		node.on('close', function(done) {
 			globalContext.set(pythonPortKey, null);
 			request.get(pythonAddress + node.port + '/shutdown');
 			node.debug('Shutting down server on port ' + node.port);
+      done()
         });
     }
     RED.nodes.registerType("Predictor", PredictorNode);

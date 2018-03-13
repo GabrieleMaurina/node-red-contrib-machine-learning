@@ -91,7 +91,8 @@
                 "7dac493e.959cc8",
                 "7cfd27a7.df2108",
                 "29aebd9a.d5c732",
-                "3c5fdf21.ef47d"
+                "3c5fdf21.ef47d",
+                "7313f997.972888"
             ]
         ]
     },
@@ -119,7 +120,7 @@
         "saveName": "dtc.b",
         "depth": "20",
         "x": 540,
-        "y": 180,
+        "y": 160,
         "wires": [
             [
                 "f6972b60.54d4f8"
@@ -134,7 +135,7 @@
         "savePath": "models",
         "saveName": "knc.b",
         "neighbors": "3",
-        "x": 560,
+        "x": 540,
         "y": 240,
         "wires": [
             [
@@ -149,8 +150,8 @@
         "name": "",
         "savePath": "models",
         "saveName": "mlpc.b",
-        "x": 530,
-        "y": 300,
+        "x": 550,
+        "y": 280,
         "wires": [
             [
                 "f6972b60.54d4f8"
@@ -183,7 +184,7 @@
         "modelPath": "models",
         "modelName": "dtc.b",
         "x": 450,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
                 "5a9481bd.4a72"
@@ -219,7 +220,7 @@
         "modelPath": "models",
         "modelName": "mlpc.b",
         "x": 450,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "5a9481bd.4a72"
@@ -267,7 +268,8 @@
                 "839f5f27.9e9eb",
                 "27ae542a.e5e51c",
                 "f74e9c9f.0288e",
-                "912f9483.d4c9a8"
+                "912f9483.d4c9a8",
+                "700af4d1.84b7fc"
             ]
         ]
     },
@@ -343,5 +345,41 @@
         "x": 710,
         "y": 420,
         "wires": []
+    },
+    {
+        "id": "7313f997.972888",
+        "type": "RandomForestClassifier",
+        "z": "1fb923e9.d9699c",
+        "name": "",
+        "savePath": "models",
+        "saveName": "rfc.b",
+        "criterion": "gini",
+        "numTrees": "10",
+        "depth": "20",
+        "x": 550,
+        "y": 200,
+        "wires": [
+            [
+                "f6972b60.54d4f8"
+            ]
+        ]
+    },
+    {
+        "id": "700af4d1.84b7fc",
+        "type": "Predictor",
+        "z": "1fb923e9.d9699c",
+        "name": "RFC",
+        "modelPath": "models",
+        "modelName": "rfc.b",
+        "x": 450,
+        "y": 440,
+        "wires": [
+            [
+                "5a9481bd.4a72"
+            ],
+            [
+                "368b5e5a.ea9c52"
+            ]
+        ]
     }
 ]
