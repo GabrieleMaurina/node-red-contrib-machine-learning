@@ -6,9 +6,9 @@ module.exports = function(RED){
     var node = this;
     node.file = __dirname +  '\\..\\trainer.py'
 
-    const layers = null
+    var layers = null
     try{
-      layers = config.layers.replace(' ', '').split(',').map(parseInt)
+      layers = config.layers.replace(' ', '').split(',').map((n) => parseInt(n))
     }
     catch(err){}
 

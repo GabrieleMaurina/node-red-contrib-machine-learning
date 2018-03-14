@@ -6,9 +6,9 @@ module.exports = function(RED){
       var node = this;
       node.file = __dirname + '\\create-dataset.py'
 
-      const input = null
+      var input = null
       try{
-        input = config.input.replace(' ', '').split(',').map(parseInt)
+        input = config.input.replace(' ', '').split(',').map((n) => parseInt(n))
       }
       catch(err){}
 

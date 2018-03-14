@@ -88,11 +88,11 @@
         "y": 200,
         "wires": [
             [
+                "3c5fdf21.ef47d",
                 "7cfd27a7.df2108",
-                "7dac493e.959cc8",
-                "7313f997.972888",
                 "29aebd9a.d5c732",
-                "3c5fdf21.ef47d"
+                "7313f997.972888",
+                "7dac493e.959cc8"
             ],
             [
                 "2f4b0c3e.6908e4"
@@ -128,7 +128,7 @@
         "saveName": "dtc.b",
         "maxDepth": "",
         "criterion": "gini",
-        "splitter": "best",
+        "splitter": "random",
         "x": 540,
         "y": 120,
         "wires": [
@@ -291,7 +291,11 @@
         "y": 540,
         "wires": [
             [
-                "27ae542a.e5e51c"
+                "912f9483.d4c9a8",
+                "27ae542a.e5e51c",
+                "f74e9c9f.0288e",
+                "700af4d1.84b7fc",
+                "839f5f27.9e9eb"
             ],
             [
                 "368b5e5a.ea9c52"
