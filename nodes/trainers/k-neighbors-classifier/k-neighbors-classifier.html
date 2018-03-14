@@ -1,24 +1,24 @@
 <script type="text/javascript">
-RED.nodes.registerType('KNeighborsClassifier',{
+RED.nodes.registerType('k neighbors classifier',{
   category: 'machine learning',
   color: '#DAC4B4',
   defaults: {
     name: {value:""},
     savePath: {value:""},
     saveName: {value:""},
-    neighbors: {value:"3", type:"int"},
+    neighbors: {value:"", type:"int"},
     weights: {value:"uniform"}
   },
   inputs:1,
   outputs:2,
   icon: "file.png",
   label: function() {
-    return this.name||"KNeighborsClassifier";
+    return this.name||"k neighbors classifier";
   }
 });
 </script>
 
-<script type="text/x-red" data-template-name="KNeighborsClassifier">
+<script type="text/x-red" data-template-name="k neighbors classifier">
   <div class="form-row">
     <label for="node-input-name"><i class="icon-tag"></i>Name</label>
     <input type="text" id="node-input-name" placeholder="Name">
@@ -44,6 +44,6 @@ RED.nodes.registerType('KNeighborsClassifier',{
   </div>
 </script>
 
-<script type="text/x-red" data-help-name="KNeighborsClassifier">
+<script type="text/x-red" data-help-name="k neighbors classifier">
   <p>A node that trains a K Neighbors Classifier model.</p>
 </script>

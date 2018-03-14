@@ -1,5 +1,5 @@
 <script type="text/javascript">
-RED.nodes.registerType('SupportVectorClassifier',{
+RED.nodes.registerType('support vector classifier',{
   category: 'machine learning',
   color: '#DAC4B4',
   defaults: {
@@ -13,12 +13,12 @@ RED.nodes.registerType('SupportVectorClassifier',{
   outputs:2,
   icon: "file.png",
   label: function() {
-    return this.name||"SupportVectorClassifier";
+    return this.name||"support vector classifier";
   }
 });
 </script>
 
-<script type="text/x-red" data-template-name="SupportVectorClassifier">
+<script type="text/x-red" data-template-name="support vector classifier">
   <div class="form-row">
     <label for="node-input-name"><i class="icon-tag"></i>Name</label>
     <input type="text" id="node-input-name" placeholder="Name">
@@ -47,6 +47,6 @@ RED.nodes.registerType('SupportVectorClassifier',{
   </div>
 </script>
 
-<script type="text/x-red" data-help-name="SupportVectorClassifier">
+<script type="text/x-red" data-help-name="support vector classifier">
   <p>A node that trains a Support Vector Classifier model.</p>
 </script>

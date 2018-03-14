@@ -1,5 +1,5 @@
 module.exports = function(RED){
-  function KNCNode(config){
+  function kNCNode(config){
     const path = require('path')
     const utils = require('../../../utils/utils')
 
@@ -16,5 +16,5 @@ module.exports = function(RED){
 
     utils.run(RED, node, config)
   }
-  RED.nodes.registerType("KNeighborsClassifier", KNCNode);
+  RED.nodes.registerType("k neighbors classifier", kNCNode);
 }

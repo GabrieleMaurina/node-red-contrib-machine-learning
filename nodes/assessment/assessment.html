@@ -1,21 +1,21 @@
 <script type="text/javascript">
-RED.nodes.registerType('Assessment',{
+RED.nodes.registerType('assessment',{
   category: 'machine learning',
   color: '#E9967A',
   defaults: {
     name: {value:""},
-    score: {value:"accuracy"}
+    score: {value:"accuracy_score"}
   },
   inputs:1,
   outputs:2,
   icon: "file.png",
   label: function() {
-    return this.name||"Assessment";
+    return this.name||"assessment";
   }
 });
 </script>
 
-<script type="text/x-red" data-template-name="Assessment">
+<script type="text/x-red" data-template-name="assessment">
   <div class="form-row">
     <label for="node-input-name"><i class="icon-tag"></i>Name</label>
     <input type="text" id="node-input-name" placeholder="Name">
@@ -38,6 +38,6 @@ RED.nodes.registerType('Assessment',{
   </div>
 </script>
 
-<script type="text/x-red" data-help-name="Assessment">
+<script type="text/x-red" data-help-name="assessment">
   <p>A node that does assessment over a real and a predicted output.</p>
 </script>

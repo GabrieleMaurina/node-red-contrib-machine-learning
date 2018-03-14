@@ -1,5 +1,5 @@
 <script type="text/javascript">
-RED.nodes.registerType('MultiLayerPerceptronClassifier',{
+RED.nodes.registerType('multi layer perceptron classifier',{
   category: 'machine learning',
   color: '#DAC4B4',
   defaults: {
@@ -17,12 +17,12 @@ RED.nodes.registerType('MultiLayerPerceptronClassifier',{
   outputs:2,
   icon: "file.png",
   label: function() {
-    return this.name||"MultiLayerPerceptronClassifier";
+    return this.name||"multi layer perceptron classifier";
   }
 });
 </script>
 
-<script type="text/x-red" data-template-name="MultiLayerPerceptronClassifier">
+<script type="text/x-red" data-template-name="multi layer perceptron classifier">
   <div class="form-row">
     <label for="node-input-name"><i class="icon-tag"></i>Name</label>
     <input type="text" id="node-input-name" placeholder="Name">
@@ -70,6 +70,6 @@ RED.nodes.registerType('MultiLayerPerceptronClassifier',{
   </div>
 </script>
 
-<script type="text/x-red" data-help-name="MultiLayerPerceptronClassifier">
+<script type="text/x-red" data-help-name="multi layer perceptron classifier">
   <p>A node that trains a Multi Layer Perceptron Classifier model.</p>
 </script>

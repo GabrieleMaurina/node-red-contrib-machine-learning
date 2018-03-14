@@ -1,5 +1,5 @@
 module.exports = function(RED){
-  function AssessmentNode(config){
+  function assessmentNode(config){
     const utils = require('../../utils/utils')
 
     var node = this;
@@ -23,5 +23,5 @@ module.exports = function(RED){
 
     utils.run(RED, node, config)
   }
-  RED.nodes.registerType("Assessment", AssessmentNode);
+  RED.nodes.registerType("assessment", assessmentNode);
 }

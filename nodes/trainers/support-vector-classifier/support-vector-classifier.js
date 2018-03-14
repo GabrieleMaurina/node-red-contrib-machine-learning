@@ -1,5 +1,5 @@
 module.exports = function(RED){
-  function SupportVectorClassifierNode(config){
+  function sVCNode(config){
     const path = require('path')
     const utils = require('../../../utils/utils')
 
@@ -16,5 +16,5 @@ module.exports = function(RED){
 
     utils.run(RED, node, config)
   }
-  RED.nodes.registerType("SupportVectorClassifier", SupportVectorClassifierNode);
+  RED.nodes.registerType("support vector classifier", sVCNode);
 }

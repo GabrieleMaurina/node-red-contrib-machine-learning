@@ -18,11 +18,11 @@
       "LoadDataset": "nodes\\dataset\\load-dataset\\load-dataset.js",
       "Predictor": "nodes\\predictor\\predictor.js",
       "Assessment": "nodes\\assessment\\assessment.js",
-      "SupportVectorClassifier": "nodes\\trainers\\support-vector-classifier\\support-vector-classifier.js",
-      "DecisionTreeClassifier": "nodes\\trainers\\decision-tree-classifier\\decision-tree-classifier.js",
-      "RandomForestClassifier": "nodes\\trainers\\random-forest-classifier\\random-forest-classifier.js",
-      "KNeighborsClassifier": "nodes\\trainers\\k-neighbors-classifier\\k-neighbors-classifier.js",
-      "MultiLayerPerceptronClassifier": "nodes\\trainers\\multi-layer-perceptron-classifier\\multi-layer-perceptron-classifier.js"
+      "decision tree classifier": "nodes\\trainers\\decision-tree-classifier\\decision-tree-classifier.js",
+      "k neighbors classifier": "nodes\\trainers\\k-neighbors-classifier\\k-neighbors-classifier.js",
+      "multi layer perceptron classifier": "nodes\\trainers\\multi-layer-perceptron-classifier\\multi-layer-perceptron-classifier.js",
+      "random forest classifier": "nodes\\trainers\\random-forest-classifier\\random-forest-classifier.js",
+      "support vector classifier": "nodes\\trainers\\support-vector-classifier\\support-vector-classifier.js"
     }
   },
   "dependencies": {

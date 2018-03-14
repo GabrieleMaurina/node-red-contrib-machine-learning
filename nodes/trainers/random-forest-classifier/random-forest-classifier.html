@@ -1,5 +1,5 @@
 <script type="text/javascript">
-RED.nodes.registerType('RandomForestClassifier',{
+RED.nodes.registerType('random forest classifier',{
   category: 'machine learning',
   color: '#DAC4B4',
   defaults: {
@@ -14,12 +14,12 @@ RED.nodes.registerType('RandomForestClassifier',{
   outputs:2,
   icon: "file.png",
   label: function() {
-    return this.name||"RandomForestClassifier";
+    return this.name||"random forest classifier";
   }
 });
 </script>
 
-<script type="text/x-red" data-template-name="RandomForestClassifier">
+<script type="text/x-red" data-template-name="random forest classifier">
   <div class="form-row">
     <label for="node-input-name"><i class="icon-tag"></i>Name</label>
     <input type="text" id="node-input-name" placeholder="Name">
@@ -49,6 +49,6 @@ RED.nodes.registerType('RandomForestClassifier',{
   </div>
 </script>
 
-<script type="text/x-red" data-help-name="RandomForestClassifier">
+<script type="text/x-red" data-help-name="random forest classifier">
   <p>A node that trains a Random Forest Classifier model.</p>
 </script>

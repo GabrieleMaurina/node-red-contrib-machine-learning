@@ -1,5 +1,5 @@
 <script type="text/javascript">
-RED.nodes.registerType('Predictor',{
+RED.nodes.registerType('predictor',{
   category: 'machine learning',
   color: '#C7E9C0',
   defaults: {
@@ -11,12 +11,12 @@ RED.nodes.registerType('Predictor',{
   outputs:2,
   icon: "file.png",
   label: function() {
-    return this.name||"Predictor";
+    return this.name||"predictor";
   }
 });
 </script>
 
-<script type="text/x-red" data-template-name="Predictor">
+<script type="text/x-red" data-template-name="predictor">
   <div class="form-row">
     <label for="node-input-name"><i class="icon-tag"></i>Name</label>
     <input type="text" id="node-input-name" placeholder="Name">
@@ -31,6 +31,6 @@ RED.nodes.registerType('Predictor',{
   </div>
 </script>
 
-<script type="text/x-red" data-help-name="Predictor">
+<script type="text/x-red" data-help-name="predictor">
   <p>A node that, given a trained model, is able to make predictions.</p>
 </script>

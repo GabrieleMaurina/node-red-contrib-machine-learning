@@ -1,5 +1,5 @@
 module.exports = function(RED){
-  function RFCNode(config){
+  function rFCNode(config){
     const path = require('path')
     const utils = require('../../../utils/utils')
 
@@ -17,5 +17,5 @@ module.exports = function(RED){
 
     utils.run(RED, node, config)
   }
-  RED.nodes.registerType("RandomForestClassifier", RFCNode);
+  RED.nodes.registerType("random forest classifier", rFCNode);
 }

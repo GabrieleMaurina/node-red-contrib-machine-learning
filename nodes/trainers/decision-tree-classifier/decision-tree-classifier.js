@@ -1,5 +1,5 @@
 module.exports = function(RED){
-  function DTCNode(config){
+  function dTCNode(config){
     const path = require('path')
     const utils = require('../../../utils/utils')
 
@@ -17,5 +17,5 @@ module.exports = function(RED){
 
     utils.run(RED, node, config)
   }
-  RED.nodes.registerType("DecisionTreeClassifier", DTCNode)
+  RED.nodes.registerType("decision tree classifier", dTCNode)
 }

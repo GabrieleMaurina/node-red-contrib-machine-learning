@@ -1,5 +1,5 @@
 module.exports = function(RED){
-  function MLPCNode(config){
+  function mLPCNode(config){
     const path = require('path')
     const utils = require('../../../utils/utils')
 
@@ -27,5 +27,5 @@ module.exports = function(RED){
 
     utils.run(RED, node, config)
   }
-  RED.nodes.registerType("MultiLayerPerceptronClassifier", MLPCNode);
+  RED.nodes.registerType("multi layer perceptron classifier", mLPCNode);
 }

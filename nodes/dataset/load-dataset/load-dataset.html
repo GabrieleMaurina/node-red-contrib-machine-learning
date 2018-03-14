@@ -1,5 +1,5 @@
 <script type="text/javascript">
-RED.nodes.registerType('LoadDataset',{
+RED.nodes.registerType('load dataset',{
   category: 'machine learning',
   color: '#E2D96E',
   defaults: {
@@ -14,12 +14,12 @@ RED.nodes.registerType('LoadDataset',{
   outputs:2,
   icon: "file.png",
   label: function() {
-    return this.name||"LoadDataset";
+    return this.name||"load dataset";
   }
 });
 </script>
 
-<script type="text/x-red" data-template-name="LoadDataset">
+<script type="text/x-red" data-template-name="load dataset">
   <div class="form-row">
     <label for="node-input-name"><i class="icon-tag"></i>Name</label>
     <input type="text" id="node-input-name" placeholder="Name">
@@ -49,6 +49,6 @@ RED.nodes.registerType('LoadDataset',{
   </div>
 </script>
 
-<script type="text/x-red" data-help-name="LoadDataset">
+<script type="text/x-red" data-help-name="load dataset">
   <p>A node that loads a dataset precedently created.</p>
 </script>

@@ -1,5 +1,5 @@
 module.exports = function(RED){
-    function CreateDatasetNode(config){
+    function createDatasetNode(config){
       const path = require('path')
   		const utils = require('../../../utils/utils')
 
@@ -24,5 +24,5 @@ module.exports = function(RED){
 
       utils.run(RED, node, config)
     }
-    RED.nodes.registerType("CreateDataset", CreateDatasetNode)
+    RED.nodes.registerType("create dataset", createDatasetNode)
 }

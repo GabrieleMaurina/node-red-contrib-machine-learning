@@ -1,5 +1,5 @@
 module.exports = function(RED){
-  function PredictorNode(config){
+  function predictorNode(config){
     const path = require('path')
     const utils = require('../../utils/utils')
 
@@ -12,5 +12,5 @@ module.exports = function(RED){
 
     utils.run(RED, node, config)
   }
-  RED.nodes.registerType("Predictor", PredictorNode)
+  RED.nodes.registerType("predictor", predictorNode)
 }
