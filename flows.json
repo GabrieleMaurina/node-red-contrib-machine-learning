@@ -106,6 +106,8 @@
         "name": "",
         "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "saveName": "svc.b",
+        "c": "",
+        "kernel": "rbf",
         "x": 550,
         "y": 280,
         "wires": [
@@ -124,7 +126,9 @@
         "name": "",
         "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "saveName": "dtc.b",
-        "depth": "20",
+        "maxDepth": "",
+        "criterion": "gini",
+        "splitter": "best",
         "x": 540,
         "y": 120,
         "wires": [
@@ -143,7 +147,8 @@
         "name": "",
         "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "saveName": "knc.b",
-        "neighbors": "3",
+        "neighbors": "5",
+        "weights": "uniform",
         "x": 540,
         "y": 160,
         "wires": [
@@ -162,6 +167,12 @@
         "name": "",
         "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "saveName": "mlpc.b",
+        "layers": "10,10,10",
+        "activation": "relu",
+        "solver": "sgd",
+        "learningRate": "0.01",
+        "maxIter": "500",
+        "batchSize": "20",
         "x": 550,
         "y": 200,
         "wires": [
@@ -181,7 +192,7 @@
         "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "modelName": "svc.b",
         "x": 450,
-        "y": 460,
+        "y": 620,
         "wires": [
             [
                 "28df2872.0d4628"
@@ -199,7 +210,7 @@
         "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "modelName": "dtc.b",
         "x": 450,
-        "y": 500,
+        "y": 460,
         "wires": [
             [
                 "28df2872.0d4628"
@@ -217,7 +228,7 @@
         "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "modelName": "knc.b",
         "x": 450,
-        "y": 580,
+        "y": 500,
         "wires": [
             [
                 "28df2872.0d4628"
@@ -235,7 +246,7 @@
         "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "modelName": "mlpc.b",
         "x": 450,
-        "y": 620,
+        "y": 540,
         "wires": [
             [
                 "28df2872.0d4628"
@@ -280,11 +291,7 @@
         "y": 540,
         "wires": [
             [
-                "839f5f27.9e9eb",
-                "27ae542a.e5e51c",
-                "f74e9c9f.0288e",
-                "912f9483.d4c9a8",
-                "700af4d1.84b7fc"
+                "27ae542a.e5e51c"
             ],
             [
                 "368b5e5a.ea9c52"
@@ -363,7 +370,6 @@
         "saveName": "rfc.b",
         "criterion": "gini",
         "numTrees": "10",
-        "depth": "20",
         "x": 550,
         "y": 240,
         "wires": [
@@ -383,7 +389,7 @@
         "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "modelName": "rfc.b",
         "x": 450,
-        "y": 540,
+        "y": 580,
         "wires": [
             [
                 "28df2872.0d4628"

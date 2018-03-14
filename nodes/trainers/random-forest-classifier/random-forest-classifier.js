@@ -10,8 +10,8 @@ module.exports = function(RED){
       save: path.join(config.savePath, config.saveName),
       kwargs: {
         criterion: config.criterion,
-        max_depth: Number(config.depth) || undefined,
-        n_estimators: Number(config.numTrees) || undefined
+        max_depth: parseInt(config.maxDepth) || undefined,
+        n_estimators: parseInt(config.numTrees) || undefined
       }
     }
 

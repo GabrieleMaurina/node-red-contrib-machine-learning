@@ -1,36 +1,52 @@
 <script type="text/javascript">
-    RED.nodes.registerType('SupportVectorClassifier',{
-        category: 'machine learning',
-        color: '#DAC4B4',
-        defaults: {
-            name: {value:""},
-			savePath: {value:""},
-			saveName: {value:""}
-        },
-        inputs:1,
-        outputs:2,
-        icon: "file.png",
-        label: function() {
-            return this.name||"SupportVectorClassifier";
-        }
-    });
+RED.nodes.registerType('SupportVectorClassifier',{
+  category: 'machine learning',
+  color: '#DAC4B4',
+  defaults: {
+    name: {value:""},
+    savePath: {value:""},
+    saveName: {value:""},
+    c: {value:""},
+    kernel: {value:"rbf"}
+  },
+  inputs:1,
+  outputs:2,
+  icon: "file.png",
+  label: function() {
+    return this.name||"SupportVectorClassifier";
+  }
+});
 </script>
 
 <script type="text/x-red" data-template-name="SupportVectorClassifier">
-    <div class="form-row">
-        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
-        <input type="text" id="node-input-name" placeholder="Name">
-    </div>
-	<div class="form-row">
-        <label for="node-input-savePath"><i class="icon-tag"></i>Save path</label>
-        <input type="text" id="node-input-savePath" placeholder="Save path">
-    </div>
-	<div class="form-row">
-        <label for="node-input-saveName"><i class="icon-tag"></i>Save name</label>
-        <input type="text" id="node-input-saveName" placeholder="Save name">
-    </div>
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-savePath"><i class="icon-tag"></i>Save path</label>
+    <input type="text" id="node-input-savePath" placeholder="Save path">
+  </div>
+  <div class="form-row">
+    <label for="node-input-saveName"><i class="icon-tag"></i>Save name</label>
+    <input type="text" id="node-input-saveName" placeholder="Save name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-c"><i class="icon-tag"></i>C penalty</label>
+    <input type="text" id="node-input-c" placeholder="1">
+  </div>
+  <div class="form-row">
+    <label for="node-input-kernel"><i class="icon-tag"></i>Kernel</label>
+    <select id="node-input-kernel">
+      <option value="linear">linear</option>
+      <option value="poly">poly</option>
+      <option value="rbf" selected>rbf</option>
+      <option value="sigmoid">sigmoid</option>
+      <option value="precomputed">precomputed</option>
+    </select>
+  </div>
 </script>
 
 <script type="text/x-red" data-help-name="SupportVectorClassifier">
-    <p>A node that trains a Support Vector Classifier model.</p>
+  <p>A node that trains a Support Vector Classifier model.</p>
 </script>

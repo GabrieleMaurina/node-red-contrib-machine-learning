@@ -9,7 +9,8 @@ module.exports = function(RED){
       classifier: 'k-neighbors-classifier',
       save: path.join(config.savePath, config.saveName),
       kwargs: {
-        n_neighbors: Number(config.neighbors) || undefined
+        n_neighbors: parseInt(config.neighbors) || undefined,
+        weights : config.weights || undefined
       }
     }
 

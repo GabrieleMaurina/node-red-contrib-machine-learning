@@ -9,7 +9,9 @@ module.exports = function(RED){
       classifier: 'decision-tree-classifier',
       save: path.join(config.savePath, config.saveName),
       kwargs: {
-        max_depth: Number(config.depth) || undefined
+        max_depth: parseInt(config.depth) || undefined,
+        criterion: config.criterion || undefined,
+        splitter: config.splitter || undefined
       }
     }
 

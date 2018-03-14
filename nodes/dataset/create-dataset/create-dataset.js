@@ -5,14 +5,21 @@ module.exports = function(RED){
 
       var node = this;
       node.file = __dirname + '\\create-dataset.py'
+
+      const input = null
+      try{
+        input = config.input.replace(' ', '').split(',').map(parseInt)
+      }
+      catch(err){}
+
   		node.config = {
   			path: config.path,
   			save: path.join(config.saveFolder, config.saveName),
-  			input: config.input.replace(' ', '').split(',').map(Number),
-  			output: Number(config.output),
+  			input: input || [0],
+  			output: parseInt(config.output),
   			trainingPartition: Number(config.trainingPartition)/100.0,
   			shuffle: Boolean(config.shuffle),
-  			seed: Number(config.seed)
+  			seed: parseInt(config.seed)
   		}
 
       utils.run(RED, node, config)

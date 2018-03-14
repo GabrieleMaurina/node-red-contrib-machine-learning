@@ -6,9 +6,12 @@ module.exports = function(RED){
     var node = this;
     node.file = __dirname +  '\\..\\trainer.py'
     node.config = {
-      classifier: 'decision-tree-classifier',
+      classifier: 'support-vector-classifier',
       save: path.join(config.savePath, config.saveName),
-      kwargs: {}
+      kwargs: {
+        C: Number(config.c) || undefined,
+        kernel: config.kernel || undefined
+      }
     }
 
     utils.run(RED, node, config)

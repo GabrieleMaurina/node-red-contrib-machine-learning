@@ -1,54 +1,54 @@
 <script type="text/javascript">
-    RED.nodes.registerType('RandomForestClassifier',{
-        category: 'machine learning',
-        color: '#DAC4B4',
-        defaults: {
-            name: {value:""},
-      			savePath: {value:""},
-      			saveName: {value:""},
-            criterion: {value:"gini"},
-      			numTrees: {value:"10", type:"int"},
-      			depth: {value:"20", type:"int"}
-        },
-        inputs:1,
-        outputs:2,
-        icon: "file.png",
-        label: function() {
-            return this.name||"RandomForestClassifier";
-        }
-    });
+RED.nodes.registerType('RandomForestClassifier',{
+  category: 'machine learning',
+  color: '#DAC4B4',
+  defaults: {
+    name: {value:""},
+    savePath: {value:""},
+    saveName: {value:""},
+    criterion: {value:"gini"},
+    numTrees: {value:"", type:"int"},
+    maxDepth: {value:"", type:"int"}
+  },
+  inputs:1,
+  outputs:2,
+  icon: "file.png",
+  label: function() {
+    return this.name||"RandomForestClassifier";
+  }
+});
 </script>
 
 <script type="text/x-red" data-template-name="RandomForestClassifier">
-    <div class="form-row">
-        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
-        <input type="text" id="node-input-name" placeholder="Name">
-    </div>
-	<div class="form-row">
-        <label for="node-input-savePath"><i class="icon-tag"></i>Save path</label>
-        <input type="text" id="node-input-savePath" placeholder="Save path">
-    </div>
-	<div class="form-row">
-        <label for="node-input-saveName"><i class="icon-tag"></i>Save name</label>
-        <input type="text" id="node-input-saveName" placeholder="Save name">
-    </div>
   <div class="form-row">
-    <label for="node-input-criterion"><i class="icon-tag"></i>Criterion</label>
-		<select id="node-input-criterion">
-			<option value="gini" selected>gini</option>
-			<option value="entropy">entropy</option>
-		</select>
+    <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
   </div>
   <div class="form-row">
-        <label for="node-input-numTrees"><i class="icon-tag"></i>Number of trees</label>
-        <input type="number" id="node-input-numTrees" placeholder="Number of trees in the forest.">
-    </div>
-	<div class="form-row">
-        <label for="node-input-depth"><i class="icon-tag"></i>Depth</label>
-        <input type="number" id="node-input-depth" placeholder="Max depth of the tree.">
-    </div>
+    <label for="node-input-savePath"><i class="icon-tag"></i>Save path</label>
+    <input type="text" id="node-input-savePath" placeholder="Save path">
+  </div>
+  <div class="form-row">
+    <label for="node-input-saveName"><i class="icon-tag"></i>Save name</label>
+    <input type="text" id="node-input-saveName" placeholder="Save name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-criterion"><i class="icon-tag"></i>Criterion</label>
+    <select id="node-input-criterion">
+      <option value="gini" selected>gini</option>
+      <option value="entropy">entropy</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label for="node-input-numTrees"><i class="icon-tag"></i>Number of trees</label>
+    <input type="number" id="node-input-numTrees" placeholder="10">
+  </div>
+  <div class="form-row">
+    <label for="node-input-depth"><i class="icon-tag"></i>Depth</label>
+    <input type="number" id="node-input-depth" placeholder="Max depth of the trees.">
+  </div>
 </script>
 
 <script type="text/x-red" data-help-name="RandomForestClassifier">
-    <p>A node that trains a Random Forest Classifier model.</p>
+  <p>A node that trains a Random Forest Classifier model.</p>
 </script>

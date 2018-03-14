@@ -1,36 +1,75 @@
 <script type="text/javascript">
-    RED.nodes.registerType('MultiLayerPerceptronClassifier',{
-        category: 'machine learning',
-        color: '#DAC4B4',
-        defaults: {
-            name: {value:""},
-			savePath: {value:""},
-			saveName: {value:""}
-        },
-        inputs:1,
-        outputs:2,
-        icon: "file.png",
-        label: function() {
-            return this.name||"MultiLayerPerceptronClassifier";
-        }
-    });
+RED.nodes.registerType('MultiLayerPerceptronClassifier',{
+  category: 'machine learning',
+  color: '#DAC4B4',
+  defaults: {
+    name: {value:""},
+    savePath: {value:""},
+    saveName: {value:""},
+    layers: {value:""},
+    activation: {value:"relu"},
+    solver: {value:"adam"},
+    learningRate: {value:""},
+    maxIter: {value:""},
+    batchSize: {value:""}
+  },
+  inputs:1,
+  outputs:2,
+  icon: "file.png",
+  label: function() {
+    return this.name||"MultiLayerPerceptronClassifier";
+  }
+});
 </script>
 
 <script type="text/x-red" data-template-name="MultiLayerPerceptronClassifier">
-    <div class="form-row">
-        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
-        <input type="text" id="node-input-name" placeholder="Name">
-    </div>
-	<div class="form-row">
-        <label for="node-input-savePath"><i class="icon-tag"></i>Save path</label>
-        <input type="text" id="node-input-savePath" placeholder="Save path">
-    </div>
-	<div class="form-row">
-        <label for="node-input-saveName"><i class="icon-tag"></i>Save name</label>
-        <input type="text" id="node-input-saveName" placeholder="Save name">
-    </div>
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-savePath"><i class="icon-tag"></i>Save path</label>
+    <input type="text" id="node-input-savePath" placeholder="Save path">
+  </div>
+  <div class="form-row">
+    <label for="node-input-saveName"><i class="icon-tag"></i>Save name</label>
+    <input type="text" id="node-input-saveName" placeholder="Save name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-layers"><i class="icon-tag"></i>Layers</label>
+    <input type="text" id="node-input-layers" placeholder="100">
+  </div>
+  <div class="form-row">
+    <label for="node-input-activation"><i class="icon-tag"></i>Activation</label>
+    <select id="node-input-activation">
+      <option value="identity">identity</option>
+      <option value="logistic">logistic</option>
+      <option value="tanh">tanh</option>
+      <option value="relu" selected>relu</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label for="node-input-solver"><i class="icon-tag"></i>Solver</label>
+    <select id="node-input-solver">
+      <option value="adam" selected>gini</option>
+      <option value="lbfgs">lbfgs</option>
+      <option value="sgd">sgd</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label for="node-input-learningRate"><i class="icon-tag"></i>Learning rate</label>
+    <input type="text" id="node-input-learningRate" placeholder="0.001">
+  </div>
+  <div class="form-row">
+    <label for="node-input-maxIter"><i class="icon-tag"></i>Max iterations</label>
+    <input type="number" id="node-input-maxIter" placeholder="200">
+  </div>
+  <div class="form-row">
+    <label for="node-input-batchSize"><i class="icon-tag"></i>Batch size</label>
+    <input type="number" id="node-input-batchSize" placeholder="200">
+  </div>
 </script>
 
 <script type="text/x-red" data-help-name="MultiLayerPerceptronClassifier">
-    <p>A node that trains a Multi Layer Perceptron Classifier model.</p>
+  <p>A node that trains a Multi Layer Perceptron Classifier model.</p>
 </script>
