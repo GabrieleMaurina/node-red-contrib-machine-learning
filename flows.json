@@ -58,8 +58,8 @@
         "type": "CreateDataset",
         "z": "1fb923e9.d9699c",
         "name": "",
-        "path": "iris.data",
-        "saveFolder": "dataset",
+        "path": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\iris.data",
+        "saveFolder": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\dataset",
         "saveName": "iris",
         "input": "0,1,2,3",
         "output": "4",
@@ -79,20 +79,23 @@
         "type": "LoadDataset",
         "z": "1fb923e9.d9699c",
         "name": "",
-        "datasetFolder": "dataset",
+        "datasetFolder": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\dataset",
         "datasetName": "iris",
-        "partition": "train.json",
+        "partition": "train.csv",
         "input": true,
         "output": true,
         "x": 290,
         "y": 200,
         "wires": [
             [
-                "7dac493e.959cc8",
                 "7cfd27a7.df2108",
+                "7dac493e.959cc8",
+                "7313f997.972888",
                 "29aebd9a.d5c732",
-                "3c5fdf21.ef47d",
-                "7313f997.972888"
+                "3c5fdf21.ef47d"
+            ],
+            [
+                "2f4b0c3e.6908e4"
             ]
         ]
     },
@@ -101,13 +104,16 @@
         "type": "SupportVectorClassifier",
         "z": "1fb923e9.d9699c",
         "name": "",
-        "savePath": "models",
+        "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "saveName": "svc.b",
         "x": 550,
-        "y": 120,
+        "y": 280,
         "wires": [
             [
                 "f6972b60.54d4f8"
+            ],
+            [
+                "2f4b0c3e.6908e4"
             ]
         ]
     },
@@ -116,14 +122,17 @@
         "type": "DecisionTreeClassifier",
         "z": "1fb923e9.d9699c",
         "name": "",
-        "savePath": "models",
+        "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "saveName": "dtc.b",
         "depth": "20",
         "x": 540,
-        "y": 160,
+        "y": 120,
         "wires": [
             [
                 "f6972b60.54d4f8"
+            ],
+            [
+                "2f4b0c3e.6908e4"
             ]
         ]
     },
@@ -132,14 +141,17 @@
         "type": "KNeighborsClassifier",
         "z": "1fb923e9.d9699c",
         "name": "",
-        "savePath": "models",
+        "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "saveName": "knc.b",
         "neighbors": "3",
         "x": 540,
-        "y": 240,
+        "y": 160,
         "wires": [
             [
                 "f6972b60.54d4f8"
+            ],
+            [
+                "2f4b0c3e.6908e4"
             ]
         ]
     },
@@ -148,13 +160,16 @@
         "type": "MultiLayerPerceptronClassifier",
         "z": "1fb923e9.d9699c",
         "name": "",
-        "savePath": "models",
+        "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "saveName": "mlpc.b",
         "x": 550,
-        "y": 280,
+        "y": 200,
         "wires": [
             [
                 "f6972b60.54d4f8"
+            ],
+            [
+                "2f4b0c3e.6908e4"
             ]
         ]
     },
@@ -163,13 +178,13 @@
         "type": "Predictor",
         "z": "1fb923e9.d9699c",
         "name": "SVC",
-        "modelPath": "models",
+        "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "modelName": "svc.b",
         "x": 450,
-        "y": 360,
+        "y": 460,
         "wires": [
             [
-                "5a9481bd.4a72"
+                "28df2872.0d4628"
             ],
             [
                 "368b5e5a.ea9c52"
@@ -181,13 +196,13 @@
         "type": "Predictor",
         "z": "1fb923e9.d9699c",
         "name": "DTC",
-        "modelPath": "models",
+        "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "modelName": "dtc.b",
         "x": 450,
-        "y": 400,
+        "y": 500,
         "wires": [
             [
-                "5a9481bd.4a72"
+                "28df2872.0d4628"
             ],
             [
                 "368b5e5a.ea9c52"
@@ -199,13 +214,13 @@
         "type": "Predictor",
         "z": "1fb923e9.d9699c",
         "name": "KNC",
-        "modelPath": "models",
+        "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "modelName": "knc.b",
         "x": 450,
-        "y": 480,
+        "y": 580,
         "wires": [
             [
-                "5a9481bd.4a72"
+                "28df2872.0d4628"
             ],
             [
                 "368b5e5a.ea9c52"
@@ -217,13 +232,13 @@
         "type": "Predictor",
         "z": "1fb923e9.d9699c",
         "name": "MLPC",
-        "modelPath": "models",
+        "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "modelName": "mlpc.b",
         "x": 450,
-        "y": 520,
+        "y": 620,
         "wires": [
             [
-                "5a9481bd.4a72"
+                "28df2872.0d4628"
             ],
             [
                 "368b5e5a.ea9c52"
@@ -256,13 +271,13 @@
         "type": "LoadDataset",
         "z": "1fb923e9.d9699c",
         "name": "",
-        "datasetFolder": "dataset",
+        "datasetFolder": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\dataset",
         "datasetName": "iris",
-        "partition": "test.json",
+        "partition": "test.csv",
         "input": true,
         "output": false,
         "x": 270,
-        "y": 440,
+        "y": 540,
         "wires": [
             [
                 "839f5f27.9e9eb",
@@ -270,19 +285,9 @@
                 "f74e9c9f.0288e",
                 "912f9483.d4c9a8",
                 "700af4d1.84b7fc"
-            ]
-        ]
-    },
-    {
-        "id": "5a9481bd.4a72",
-        "type": "Assessment",
-        "z": "1fb923e9.d9699c",
-        "name": "Accuracy",
-        "x": 660,
-        "y": 600,
-        "wires": [
+            ],
             [
-                "f7fd696e.a2a528"
+                "368b5e5a.ea9c52"
             ]
         ]
     },
@@ -297,7 +302,7 @@
         "tostatus": false,
         "complete": "payload",
         "x": 810,
-        "y": 600,
+        "y": 380,
         "wires": []
     },
     {
@@ -305,16 +310,19 @@
         "type": "LoadDataset",
         "z": "1fb923e9.d9699c",
         "name": "",
-        "datasetFolder": "dataset",
+        "datasetFolder": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\dataset",
         "datasetName": "iris",
-        "partition": "test.json",
+        "partition": "test.csv",
         "input": false,
         "output": true,
-        "x": 270,
-        "y": 600,
+        "x": 370,
+        "y": 400,
         "wires": [
             [
-                "5a9481bd.4a72"
+                "28df2872.0d4628"
+            ],
+            [
+                "368b5e5a.ea9c52"
             ]
         ]
     },
@@ -328,22 +336,22 @@
         "console": false,
         "tostatus": false,
         "complete": "payload",
-        "x": 790,
-        "y": 200,
+        "x": 810,
+        "y": 160,
         "wires": []
     },
     {
         "id": "368b5e5a.ea9c52",
         "type": "debug",
         "z": "1fb923e9.d9699c",
-        "name": "Print Error",
+        "name": "Error",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "payload",
-        "x": 710,
-        "y": 420,
+        "x": 790,
+        "y": 540,
         "wires": []
     },
     {
@@ -351,16 +359,19 @@
         "type": "RandomForestClassifier",
         "z": "1fb923e9.d9699c",
         "name": "",
-        "savePath": "models",
+        "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "saveName": "rfc.b",
         "criterion": "gini",
         "numTrees": "10",
         "depth": "20",
         "x": 550,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
                 "f6972b60.54d4f8"
+            ],
+            [
+                "2f4b0c3e.6908e4"
             ]
         ]
     },
@@ -369,13 +380,44 @@
         "type": "Predictor",
         "z": "1fb923e9.d9699c",
         "name": "RFC",
-        "modelPath": "models",
+        "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
         "modelName": "rfc.b",
         "x": 450,
-        "y": 440,
+        "y": 540,
         "wires": [
             [
-                "5a9481bd.4a72"
+                "28df2872.0d4628"
+            ],
+            [
+                "368b5e5a.ea9c52"
+            ]
+        ]
+    },
+    {
+        "id": "2f4b0c3e.6908e4",
+        "type": "debug",
+        "z": "1fb923e9.d9699c",
+        "name": "Error",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 810,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "28df2872.0d4628",
+        "type": "Assessment",
+        "z": "1fb923e9.d9699c",
+        "name": "",
+        "score": "accuracy_score",
+        "x": 650,
+        "y": 380,
+        "wires": [
+            [
+                "f7fd696e.a2a528"
             ],
             [
                 "368b5e5a.ea9c52"

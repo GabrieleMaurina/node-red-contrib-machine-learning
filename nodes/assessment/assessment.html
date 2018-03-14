@@ -23,9 +23,17 @@ RED.nodes.registerType('Assessment',{
   <div class="form-row">
     <label for="node-input-score"><i class="icon-tag"></i>Type</label>
     <select id="node-input-score">
-      <option value="accuracy" selected>Accuracy</option>
-      <option value="precision">Precision</option>
-      <option value="f1 score">F1 score</option>
+      <option value="accuracy_score" selected>accuracy</option>
+      <option value="cohen_kappa_score">cohen kappa</option>
+      <option value="confusion_matrix">confusion matrix</option>
+      <option value="f1_score">f1</option>
+      <option value="fbeta_score">fbeta</option>
+      <option value="hamming_loss">hamming loss</option>
+      <option value="jaccard_similarity_score">jaccard similarity</option>
+      <option value="matthews_corrcoef">matthews correlation coefficient</option>
+      <option value="precision_score">precision</option>
+      <option value="recall_score">recall</option>
+      <option value="zero_one_loss">zero one loss</option>
     </select>
   </div>
 </script>

@@ -1,17 +1,20 @@
 import sklearn.metrics as m
 import json
 import sys
+import numpy
+from inspect import getargspec
 
 config = json.loads(input())
 
 while True:
 	data = json.loads(input())
-
-	if config['score'] == 'accuracy':
-		print(m.accuracy_score(data['real'], data['predicted']))
-	elif config['score'] == 'precision':
-		print(m.precision_score(data['real'], data['predicted'], average='micro'))
-	elif config['score'] == 'f1 Score':
-		print(m.f1_score(data['real'], data['predicted'], average='micro'))
-	else:
-		print('Wrong metrics type.', file=sys.stderr)
+	get_score = getattr(m, config['score'])
+	kwargs = {}
+	if 'average' in getargspec(get_score).args:
+		kwargs['average'] = 'micro'
+	if 'beta' in getargspec(get_score).args:
+		kwargs['beta'] = 1
+	score = get_score(data['real'], data['predicted'], **kwargs)
+	if type(score) is numpy.ndarray:
+		score = json.dumps(score.tolist())
+	print(score)
