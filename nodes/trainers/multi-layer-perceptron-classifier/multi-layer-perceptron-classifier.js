@@ -1,14 +1,17 @@
 module.exports = function(RED){
-    function MLPCNode(config){
-		const trainer = require('..\\utils\\trainer.js');
-		
-        var node = this;
-		
-		node.config = {
-			file: 'multi-layer-perceptron-classifier.py'
-		}
-		
-        trainer(RED, node, config);
+  function MLPCNode(config){
+    const path = require('path')
+    const utils = require('../../../utils/utils')
+
+    var node = this;
+    node.file = __dirname +  '\\..\\trainer.py'
+    node.config = {
+      classifier: 'multi-layer-perceptron-classifier',
+      save: path.join(config.savePath, config.saveName),
+      kwargs: {}
     }
-    RED.nodes.registerType("MultiLayerPerceptronClassifier", MLPCNode);
+
+    utils.run(RED, node, config)
+  }
+  RED.nodes.registerType("MultiLayerPerceptronClassifier", MLPCNode);
 }

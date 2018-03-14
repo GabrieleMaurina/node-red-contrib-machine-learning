@@ -1,54 +1,54 @@
 <script type="text/javascript">
-    RED.nodes.registerType('LoadDataset',{
-        category: 'machine learning',
-        color: '#E2D96E',
-        defaults: {
-            name: {value:""},
-			datasetFolder: {value:""},
-			datasetName: {value:""},
-			partition: {value:"train.json"},
-			input: {value: "true", type:"boolean"},
-			output: {value: "true", type:"boolean"}
-        },
-        inputs:1,
-        outputs:1,
-        icon: "file.png",
-        label: function() {
-            return this.name||"LoadDataset";
-        }
-    });
+RED.nodes.registerType('LoadDataset',{
+  category: 'machine learning',
+  color: '#E2D96E',
+  defaults: {
+    name: {value:""},
+    datasetFolder: {value:""},
+    datasetName: {value:""},
+    partition: {value:"train.csv"},
+    input: {value: "true", type:"boolean"},
+    output: {value: "true", type:"boolean"}
+  },
+  inputs:1,
+  outputs:2,
+  icon: "file.png",
+  label: function() {
+    return this.name||"LoadDataset";
+  }
+});
 </script>
 
 <script type="text/x-red" data-template-name="LoadDataset">
-    <div class="form-row">
-        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
-        <input type="text" id="node-input-name" placeholder="Name">
-    </div>
-	<div class="form-row">
-        <label for="node-input-datasetFolder"><i class="icon-tag"></i>Dataset folder</label>
-        <input type="text" id="node-input-datasetFolder" placeholder="Dataset folder.">
-    </div>
-	<div class="form-row">
-        <label for="node-input-datasetName"><i class="icon-tag"></i>Dataset name</label>
-        <input type="text" id="node-input-datasetName" placeholder="Dataset name.">
-    </div>
-	<div class="form-row">
-        <label for="node-input-partition"><i class="icon-tag"></i>Partition</label>
-		<select id="node-input-partition">
-			<option value="train.json" selected>Training</option>
-			<option value="test.json">Testing</option>
-		</select>
-    </div>
-	<div class="form-row">
-        <label for="node-input-input"><i class="icon-tag"></i>Load input</label>
-        <input type="checkbox" id="node-input-input">
-    </div>
-	<div class="form-row">
-        <label for="node-input-output"><i class="icon-tag"></i>Load output</label>
-        <input type="checkbox" id="node-input-output">
-    </div>
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-datasetFolder"><i class="icon-tag"></i>Dataset folder</label>
+    <input type="text" id="node-input-datasetFolder" placeholder="Dataset folder.">
+  </div>
+  <div class="form-row">
+    <label for="node-input-datasetName"><i class="icon-tag"></i>Dataset name</label>
+    <input type="text" id="node-input-datasetName" placeholder="Dataset name.">
+  </div>
+  <div class="form-row">
+    <label for="node-input-partition"><i class="icon-tag"></i>Partition</label>
+    <select id="node-input-partition">
+      <option value="train.csv" selected>Training</option>
+      <option value="test.csv">Testing</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label for="node-input-input"><i class="icon-tag"></i>Load input</label>
+    <input type="checkbox" id="node-input-input">
+  </div>
+  <div class="form-row">
+    <label for="node-input-output"><i class="icon-tag"></i>Load output</label>
+    <input type="checkbox" id="node-input-output">
+  </div>
 </script>
 
 <script type="text/x-red" data-help-name="LoadDataset">
-    <p>A node that loads a dataset precedently created.</p>
+  <p>A node that loads a dataset precedently created.</p>
 </script>

@@ -1,23 +1,17 @@
-import json
 import sklearn.metrics as m
-import os
-import sys
 import json
+import sys
 
-dir = os.path.split(os.path.abspath(__file__))[0]
-file = dir + '\\assessment_' + sys.argv[1] + '.json'
-data = json.load(open(file, 'r'))
-os.remove(file)
+config = json.loads(input())
 
-res = 0
+while True:
+	data = json.loads(input())
 
-if sys.argv[2] == 'Accuracy':
-	res = m.accuracy_score(data['real'], data['predicted'])
-elif sys.argv[2] == 'Precision':
-	res = m.precision_score(data['real'], data['predicted'], average='micro')
-elif sys.argv[2] == 'F1 Score':
-	res = m.f1_score(data['real'], data['predicted'], average='micro')
-else:
-	raise Exception('Bad request.')
-
-print(res)
+	if config['score'] == 'accuracy':
+		print(m.accuracy_score(data['real'], data['predicted']))
+	elif config['score'] == 'precision':
+		print(m.precision_score(data['real'], data['predicted'], average='micro'))
+	elif config['score'] == 'f1 Score':
+		print(m.f1_score(data['real'], data['predicted'], average='micro'))
+	else:
+		print('Wrong metrics type.', file=sys.stderr)
