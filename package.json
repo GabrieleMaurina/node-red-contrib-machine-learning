@@ -19,6 +19,7 @@
       "Predictor": "nodes\\predictor\\predictor.js",
       "Assessment": "nodes\\assessment\\assessment.js",
       "decision tree classifier": "nodes\\trainers\\decision-tree-classifier\\decision-tree-classifier.js",
+      "deep neural network classifier": "nodes\\trainers\\deep-neural-network-classifier\\deep-neural-network-classifier.js",
       "k neighbors classifier": "nodes\\trainers\\k-neighbors-classifier\\k-neighbors-classifier.js",
       "multi layer perceptron classifier": "nodes\\trainers\\multi-layer-perceptron-classifier\\multi-layer-perceptron-classifier.js",
       "random forest classifier": "nodes\\trainers\\random-forest-classifier\\random-forest-classifier.js",

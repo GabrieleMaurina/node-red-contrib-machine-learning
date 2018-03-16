@@ -9,6 +9,9 @@ module.exports = function(RED){
     var layers = null
     try{
       layers = config.layers.replace(' ', '').split(',').map((n) => parseInt(n))
+      if(layers.some(isNaN)){
+        layers = null
+      }
     }
     catch(err){}
 

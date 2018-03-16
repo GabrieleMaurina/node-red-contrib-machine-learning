@@ -1,16 +1,19 @@
-import pickle
 import json
+import pandas
 import os
+import sys
+sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '\\..\\..\\utils')
+from sklw import SKLW
+from dnnctf import DNNCTF
 
 config = json.loads(input())
 
-last = os.stat(config['path']).st_mtime
-model = pickle.load(open(config['path'], "rb"))
+try:
+	model = SKLW(path=config['path'])
+except:
+	model = DNNCTF(path=config['path'])
 
 while True:
-	features = json.loads(input())
-	modified = os.stat(config['path']).st_mtime
-	if(modified > last):
-		last = modified
-		model = pickle.load(open(config['path'], "rb"))
-	print(json.dumps(model.predict(features).tolist()))
+	features = pandas.read_json(input(), orient='values')
+	model.update()
+	print(json.dumps(model.predict(features)))

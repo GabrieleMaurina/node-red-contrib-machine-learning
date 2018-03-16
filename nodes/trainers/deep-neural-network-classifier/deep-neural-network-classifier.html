@@ -1,0 +1,56 @@
+<script type="text/javascript">
+RED.nodes.registerType('deep neural network classifier',{
+  category: 'machine learning',
+  color: '#DAC4B4',
+  defaults: {
+    name: {value:""},
+    savePath: {value:""},
+    saveName: {value:""},
+    layers: {value:""},
+    learningRate: {value:""},
+    steps: {value:""},
+    batchSize: {value:""}
+  },
+  inputs:1,
+  outputs:2,
+  icon: "file.png",
+  label: function() {
+    return this.name||"deep neural network classifier";
+  }
+});
+</script>
+
+<script type="text/x-red" data-template-name="deep neural network classifier">
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-savePath"><i class="icon-tag"></i>Save path</label>
+    <input type="text" id="node-input-savePath" placeholder="Save path">
+  </div>
+  <div class="form-row">
+    <label for="node-input-saveName"><i class="icon-tag"></i>Save name</label>
+    <input type="text" id="node-input-saveName" placeholder="Save name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-layers"><i class="icon-tag"></i>Layers</label>
+    <input type="text" id="node-input-layers" placeholder="10, 10, 10">
+  </div>
+  <div class="form-row">
+    <label for="node-input-learningRate"><i class="icon-tag"></i>Learning rate</label>
+    <input type="text" id="node-input-learningRate" placeholder="0.01">
+  </div>
+  <div class="form-row">
+    <label for="node-input-steps"><i class="icon-tag"></i>Max iterations</label>
+    <input type="number" id="node-input-steps" placeholder="1000">
+  </div>
+  <div class="form-row">
+    <label for="node-input-batchSize"><i class="icon-tag"></i>Batch size</label>
+    <input type="number" id="node-input-batchSize" placeholder="10">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="deep neural network classifier">
+  <p>A node that trains a Deep Neural Network Classifier model.</p>
+</script>

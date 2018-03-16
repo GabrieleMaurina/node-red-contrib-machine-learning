@@ -2,8 +2,13 @@ import json
 import pickle
 import pandas
 import os
+import sys
+sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '\\..\\..\\utils')
+from sklw import SKLW
+from dnnctf import DNNCTF
 
 config = json.loads(input())
+save = config['save']
 
 while True:
 	df = pandas.read_json(input(), orient='values')
@@ -15,27 +20,22 @@ while True:
 
 	if config['classifier'] == 'decision-tree-classifier':
 		from sklearn.tree import DecisionTreeClassifier
-		classifier = DecisionTreeClassifier(**config['kwargs'])
+		classifier = SKLW(path=save, model=DecisionTreeClassifier(**config['kwargs']))
+	elif config['classifier'] == 'deep-neural-network-classifier':
+		classifier = DNNCTF(path=save, del_prev_mod=True, **config['kwargs'])
 	elif config['classifier'] == 'k-neighbors-classifier':
 		from sklearn.neighbors import KNeighborsClassifier
-		classifier = KNeighborsClassifier(**config['kwargs'])
+		classifier = SKLW(path=save, model=KNeighborsClassifier(**config['kwargs']))
 	elif config['classifier'] == 'multi-layer-perceptron-classifier':
 		from sklearn.neural_network import MLPClassifier
-		classifier = MLPClassifier(**config['kwargs'])
+		classifier = SKLW(path=save, model=MLPClassifier(**config['kwargs']))
 	elif config['classifier'] == 'random-forest-classifier':
 		from sklearn.ensemble import RandomForestClassifier
-		classifier = RandomForestClassifier(**config['kwargs'])
+		classifier = SKLW(path=save, model=RandomForestClassifier(**config['kwargs']))
 	elif config['classifier'] == 'support-vector-classifier':
 		from sklearn.svm import SVC
-		classifier = SVC(**config['kwargs'])
+		classifier = SKLW(path=save, model=SVC(**config['kwargs']))
 
 	classifier.fit(x, y)
 
-	save = config['save']
-	dir = os.path.dirname(save)
-	if not os.path.isdir(dir):
-		os.makedirs(dir, exist_ok=True)
-
-	pickle.dump(classifier, open(save, "wb"));
-
-	print('Training completed.')
+	print(config['classifier'] + ': training completed.')
