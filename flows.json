@@ -1,5 +1,279 @@
 [
     {
+        "id": "fef1b848.2b9838",
+        "type": "create dataset",
+        "z": "87bff9.31e99008",
+        "name": "",
+        "path": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\iris.data",
+        "saveFolder": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\dataset",
+        "saveName": "iris",
+        "input": "0,1,2,3",
+        "output": "4",
+        "trainingPartition": "80",
+        "shuffle": true,
+        "seed": "1234",
+        "x": 340,
+        "y": 60,
+        "wires": [
+            [
+                "7e54db75.897ce4"
+            ]
+        ]
+    },
+    {
+        "id": "8a1ae4f9.018d28",
+        "type": "load dataset",
+        "z": "87bff9.31e99008",
+        "name": "",
+        "datasetFolder": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\dataset",
+        "datasetName": "iris",
+        "partition": "train.csv",
+        "input": true,
+        "output": true,
+        "x": 290,
+        "y": 220,
+        "wires": [
+            [
+                "a512c040.c23f5",
+                "5ecb506f.b0fd3",
+                "3091f572.797f4a",
+                "24b00e2.93c7bf2",
+                "d830d2c8.8d126",
+                "cc62865d.8dcf38"
+            ],
+            [
+                "bc2f7f66.6b46a"
+            ]
+        ]
+    },
+    {
+        "id": "3351a068.bdef6",
+        "type": "inject",
+        "z": "87bff9.31e99008",
+        "name": "Start",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "fef1b848.2b9838"
+            ]
+        ]
+    },
+    {
+        "id": "a74373e5.35f73",
+        "type": "inject",
+        "z": "87bff9.31e99008",
+        "name": "Start",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "8a1ae4f9.018d28"
+            ]
+        ]
+    },
+    {
+        "id": "ed5cb0ee.6527",
+        "type": "inject",
+        "z": "87bff9.31e99008",
+        "name": "Start",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 480,
+        "wires": [
+            [
+                "97e82d72.da74f",
+                "591f4670.8718a8"
+            ]
+        ]
+    },
+    {
+        "id": "7e54db75.897ce4",
+        "type": "debug",
+        "z": "87bff9.31e99008",
+        "name": "print",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 550,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "bc2f7f66.6b46a",
+        "type": "debug",
+        "z": "87bff9.31e99008",
+        "name": "error",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 770,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1316ce62.c878d2",
+        "type": "debug",
+        "z": "87bff9.31e99008",
+        "name": "print",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 770,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "71dc7bce.478254",
+        "type": "predictor",
+        "z": "87bff9.31e99008",
+        "name": "dtc",
+        "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
+        "modelName": "dtc.b",
+        "x": 450,
+        "y": 420,
+        "wires": [
+            [
+                "f9372163.ecf79"
+            ],
+            [
+                "3ada93bb.a5194c"
+            ]
+        ]
+    },
+    {
+        "id": "3091f572.797f4a",
+        "type": "decision tree classifier",
+        "z": "87bff9.31e99008",
+        "name": "",
+        "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
+        "saveName": "dtc.b",
+        "maxDepth": "20",
+        "criterion": "gini",
+        "splitter": "best",
+        "x": 520,
+        "y": 120,
+        "wires": [
+            [
+                "1316ce62.c878d2"
+            ],
+            [
+                "bc2f7f66.6b46a"
+            ]
+        ]
+    },
+    {
+        "id": "5ecb506f.b0fd3",
+        "type": "k neighbors classifier",
+        "z": "87bff9.31e99008",
+        "name": "",
+        "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
+        "saveName": "knc.b",
+        "neighbors": "3",
+        "weights": "uniform",
+        "x": 520,
+        "y": 200,
+        "wires": [
+            [
+                "1316ce62.c878d2"
+            ],
+            [
+                "bc2f7f66.6b46a"
+            ]
+        ]
+    },
+    {
+        "id": "24b00e2.93c7bf2",
+        "type": "multi layer perceptron classifier",
+        "z": "87bff9.31e99008",
+        "name": "",
+        "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
+        "saveName": "mlpc.b",
+        "layers": "10,10,10",
+        "activation": "relu",
+        "solver": "adam",
+        "learningRate": "0.01",
+        "maxIter": "500",
+        "batchSize": "20",
+        "x": 530,
+        "y": 240,
+        "wires": [
+            [
+                "1316ce62.c878d2"
+            ],
+            [
+                "bc2f7f66.6b46a"
+            ]
+        ]
+    },
+    {
+        "id": "d830d2c8.8d126",
+        "type": "random forest classifier",
+        "z": "87bff9.31e99008",
+        "name": "",
+        "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
+        "saveName": "rfc.b",
+        "criterion": "gini",
+        "numTrees": "5",
+        "maxDepth": "",
+        "x": 530,
+        "y": 280,
+        "wires": [
+            [
+                "1316ce62.c878d2"
+            ],
+            [
+                "bc2f7f66.6b46a"
+            ]
+        ]
+    },
+    {
+        "id": "cc62865d.8dcf38",
+        "type": "support vector classifier",
+        "z": "87bff9.31e99008",
+        "name": "",
+        "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
+        "saveName": "svc.b",
+        "c": "",
+        "kernel": "rbf",
+        "x": 530,
+        "y": 320,
+        "wires": [
+            [
+                "1316ce62.c878d2"
+            ],
+            [
+                "bc2f7f66.6b46a"
+            ]
+        ]
+    },
+    {
         "id": "f9372163.ecf79",
         "type": "assessment",
         "z": "87bff9.31e99008",
@@ -10,6 +284,193 @@
         "wires": [
             [
                 "16f5a1a1.eeaa8e"
+            ],
+            [
+                "3ada93bb.a5194c"
+            ]
+        ]
+    },
+    {
+        "id": "97e82d72.da74f",
+        "type": "load dataset",
+        "z": "87bff9.31e99008",
+        "name": "",
+        "datasetFolder": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\dataset",
+        "datasetName": "iris",
+        "partition": "test.csv",
+        "input": false,
+        "output": true,
+        "x": 290,
+        "y": 400,
+        "wires": [
+            [
+                "f9372163.ecf79"
+            ],
+            [
+                "3ada93bb.a5194c"
+            ]
+        ]
+    },
+    {
+        "id": "591f4670.8718a8",
+        "type": "load dataset",
+        "z": "87bff9.31e99008",
+        "name": "",
+        "datasetFolder": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\dataset",
+        "datasetName": "iris",
+        "partition": "test.csv",
+        "input": true,
+        "output": false,
+        "x": 290,
+        "y": 520,
+        "wires": [
+            [
+                "fe452398.df0d",
+                "71dc7bce.478254",
+                "90b82a90.042d78",
+                "3e78eb51.8c1564",
+                "4372589f.0404f8",
+                "7ba8aeef.9dae8"
+            ],
+            [
+                "3ada93bb.a5194c"
+            ]
+        ]
+    },
+    {
+        "id": "3ada93bb.a5194c",
+        "type": "debug",
+        "z": "87bff9.31e99008",
+        "name": "error",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 790,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "16f5a1a1.eeaa8e",
+        "type": "debug",
+        "z": "87bff9.31e99008",
+        "name": "print",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 790,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "90b82a90.042d78",
+        "type": "predictor",
+        "z": "87bff9.31e99008",
+        "name": "knc",
+        "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
+        "modelName": "knc.b",
+        "x": 450,
+        "y": 500,
+        "wires": [
+            [
+                "f9372163.ecf79"
+            ],
+            [
+                "3ada93bb.a5194c"
+            ]
+        ]
+    },
+    {
+        "id": "3e78eb51.8c1564",
+        "type": "predictor",
+        "z": "87bff9.31e99008",
+        "name": "mlpc",
+        "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
+        "modelName": "mlpc.b",
+        "x": 450,
+        "y": 540,
+        "wires": [
+            [
+                "f9372163.ecf79"
+            ],
+            [
+                "3ada93bb.a5194c"
+            ]
+        ]
+    },
+    {
+        "id": "4372589f.0404f8",
+        "type": "predictor",
+        "z": "87bff9.31e99008",
+        "name": "rfc",
+        "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
+        "modelName": "rfc.b",
+        "x": 450,
+        "y": 580,
+        "wires": [
+            [
+                "f9372163.ecf79"
+            ],
+            [
+                "3ada93bb.a5194c"
+            ]
+        ]
+    },
+    {
+        "id": "7ba8aeef.9dae8",
+        "type": "predictor",
+        "z": "87bff9.31e99008",
+        "name": "svc",
+        "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
+        "modelName": "svc.b",
+        "x": 450,
+        "y": 620,
+        "wires": [
+            [
+                "f9372163.ecf79"
+            ],
+            [
+                "3ada93bb.a5194c"
+            ]
+        ]
+    },
+    {
+        "id": "a512c040.c23f5",
+        "type": "deep neural network classifier",
+        "z": "87bff9.31e99008",
+        "name": "",
+        "savePath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
+        "saveName": "dnn",
+        "layers": "",
+        "learningRate": "",
+        "steps": "",
+        "batchSize": "",
+        "x": 530,
+        "y": 160,
+        "wires": [
+            [
+                "1316ce62.c878d2"
+            ],
+            [
+                "bc2f7f66.6b46a"
+            ]
+        ]
+    },
+    {
+        "id": "fe452398.df0d",
+        "type": "predictor",
+        "z": "87bff9.31e99008",
+        "name": "dnn",
+        "modelPath": "C:\\Users\\gabri\\Documents\\Workspace\\node-red-machine-learning\\test\\models",
+        "modelName": "dnn",
+        "x": 450,
+        "y": 460,
+        "wires": [
+            [
+                "f9372163.ecf79"
             ],
             [
                 "3ada93bb.a5194c"

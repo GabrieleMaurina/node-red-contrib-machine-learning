@@ -75,12 +75,12 @@ class DNNCTF:
                 x = np.array(x).T
                 x = {i: x[i] for i in range(len(x))}
             predictions = self.classifier.predict(input_fn=lambda:self.__input_func(x))
-            lenght = 0
+            length = 0
             try:
-                lenght = len(x.iterrows())
+                length = len(x.iterrows())
             except:
-                lenght = len(x[0])
-            return [self.config['classes'][p['class_ids'][0]] for i, p in zip(range(lenght), predictions)]
+                length = len(x[0])
+            return [self.config['classes'][p['class_ids'][0]] for i, p in zip(range(length), predictions)]
 
     def __save(self):
         pickle.dump(self.config, open(self.config['path'] + '\\config.b', "wb"))
