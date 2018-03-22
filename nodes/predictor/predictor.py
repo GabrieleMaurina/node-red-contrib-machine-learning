@@ -11,7 +11,7 @@ config = json.loads(input())
 try:
 	model = SKLW(path=config['path'])
 except:
-	model = DNNCTF(path=config['path'])
+	model = DNNCTF(path=config['path'], load=True)
 
 while True:
 	features = pandas.read_json(input(), orient='values')

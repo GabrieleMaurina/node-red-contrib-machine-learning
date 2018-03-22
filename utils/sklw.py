@@ -10,8 +10,11 @@ class SKLW:
 			self.last = os.stat(self.path).st_mtime
 			self.model = pickle.load(open(self.path, "rb"))
 
-	def fit(self, x, y):
-		self.model.fit(x, y)
+	def fit(self, x, y=None):
+		if y is not None:
+			self.model.fit(x, y)
+		else:
+			self.model.fit(x)
 
 		dir = os.path.dirname(self.path)
 		if not os.path.isdir(dir):

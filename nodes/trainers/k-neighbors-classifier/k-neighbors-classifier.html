@@ -1,49 +1,49 @@
 <script type="text/javascript">
-RED.nodes.registerType('k neighbors classifier',{
-  category: 'machine learning',
-  color: '#DAC4B4',
-  defaults: {
-    name: {value:""},
-    savePath: {value:""},
-    saveName: {value:""},
-    neighbors: {value:"", type:"int"},
-    weights: {value:"uniform"}
-  },
-  inputs:1,
-  outputs:2,
-  icon: "file.png",
-  label: function() {
-    return this.name||"k neighbors classifier";
-  }
-});
+	RED.nodes.registerType('k neighbors classifier',{
+		category: 'machine learning',
+		color: '#DAC4B4',
+		defaults: {
+			name: {value:""},
+			savePath: {value:""},
+			saveName: {value:""},
+			neighbors: {value:"", type:"int"},
+			weights: {value:"uniform"}
+		},
+		inputs:1,
+		outputs:2,
+		icon: "file.png",
+		label: function() {
+			return this.name||"k neighbors classifier";
+		}
+	});
 </script>
 
 <script type="text/x-red" data-template-name="k neighbors classifier">
-  <div class="form-row">
-    <label for="node-input-name"><i class="icon-tag"></i>Name</label>
-    <input type="text" id="node-input-name" placeholder="Name">
-  </div>
-  <div class="form-row">
-    <label for="node-input-savePath"><i class="icon-tag"></i>Save path</label>
-    <input type="text" id="node-input-savePath" placeholder="Save path">
-  </div>
-  <div class="form-row">
-    <label for="node-input-saveName"><i class="icon-tag"></i>Save name</label>
-    <input type="text" id="node-input-saveName" placeholder="Save name">
-  </div>
-  <div class="form-row">
-    <label for="node-input-neighbors"><i class="icon-tag"></i>Neighbors</label>
-    <input type="number" id="node-input-neighbors" placeholder="5">
-  </div>
-  <div class="form-row">
-    <label for="node-input-weights"><i class="icon-tag"></i>Weights</label>
-    <select id="node-input-weights">
-      <option value="uniform" selected>uniform</option>
-      <option value="distance">distance</option>
-    </select>
-  </div>
+	<div class="form-row">
+		<label for="node-input-name"><i class="icon-tag"></i>Name</label>
+		<input type="text" id="node-input-name" placeholder="Name">
+	</div>
+	<div class="form-row">
+		<label for="node-input-savePath"><i class="icon-tag"></i>Save path</label>
+		<input type="text" id="node-input-savePath" placeholder="Save path">
+	</div>
+	<div class="form-row">
+		<label for="node-input-saveName"><i class="icon-tag"></i>Save name</label>
+		<input type="text" id="node-input-saveName" placeholder="Save name">
+	</div>
+	<div class="form-row">
+		<label for="node-input-neighbors"><i class="icon-tag"></i>Neighbors</label>
+		<input type="number" id="node-input-neighbors" placeholder="5">
+	</div>
+	<div class="form-row">
+		<label for="node-input-weights"><i class="icon-tag"></i>Weights</label>
+		<select id="node-input-weights">
+			<option value="uniform" selected>uniform</option>
+			<option value="distance">distance</option>
+		</select>
+	</div>
 </script>
 
 <script type="text/x-red" data-help-name="k neighbors classifier">
-  <p>A node that trains a K Neighbors Classifier model.</p>
+	<p>A node that trains a K Neighbors Classifier model.</p>
 </script>

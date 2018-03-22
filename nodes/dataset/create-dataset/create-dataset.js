@@ -6,26 +6,17 @@ module.exports = function(RED){
 		var node = this;
 		node.file = __dirname + '\\create-dataset.py'
 
-		var input = null
-		try{
-			input = config.input.replace(' ', '').split(',').map((n) => parseInt(n))
-			if(input.some(isNaN)){
-				input = null
-			}
-		}
-		catch(err){}
-
 		node.config = {
-		 path: config.path,
-		 save: path.join(config.saveFolder, config.saveName),
-		 input: input || [0],
-		 output: parseInt(config.output),
-		 trainingPartition: Number(config.trainingPartition)/100.0,
-		 shuffle: Boolean(config.shuffle),
-		 seed: parseInt(config.seed)
-	 }
+			path: config.path,
+			save: path.join(config.saveFolder, config.saveName),
+			input: utils.listOfInt(config.input) || [0],
+			output: parseInt(config.output) || undefined,
+			trainingPartition: (Number(config.trainingPartition) || 80.0) / 100.0,
+			shuffle: Boolean(config.shuffle),
+			seed: parseInt(config.seed) || 0
+		}
 
-	 utils.run(RED, node, config)
- }
- RED.nodes.registerType("create dataset", createDatasetNode)
+		utils.run(RED, node, config)
+	}
+	RED.nodes.registerType("create dataset", createDatasetNode)
 }

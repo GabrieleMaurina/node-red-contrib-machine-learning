@@ -1,57 +1,57 @@
 <script type="text/javascript">
-RED.nodes.registerType('decision tree classifier',{
-  category: 'machine learning',
-  color: '#DAC4B4',
-  defaults: {
-    name: {value:""},
-    savePath: {value:""},
-    saveName: {value:""},
-    maxDepth: {value:""},
-    criterion: {value:"gini"},
-    splitter: {value:"best"}
-  },
-  inputs:1,
-  outputs:2,
-  icon: "file.png",
-  label: function() {
-    return this.name||"decision tree classifier";
-  }
-});
+	RED.nodes.registerType('decision tree classifier',{
+		category: 'machine learning',
+		color: '#DAC4B4',
+		defaults: {
+			name: {value:""},
+			savePath: {value:""},
+			saveName: {value:""},
+			maxDepth: {value:""},
+			criterion: {value:"gini"},
+			splitter: {value:"best"}
+		},
+		inputs:1,
+		outputs:2,
+		icon: "file.png",
+		label: function() {
+			return this.name||"decision tree classifier";
+		}
+	});
 </script>
 
 <script type="text/x-red" data-template-name="decision tree classifier">
-  <div class="form-row">
-    <label for="node-input-name"><i class="icon-tag"></i>Name</label>
-    <input type="text" id="node-input-name" placeholder="Name">
-  </div>
-  <div class="form-row">
-    <label for="node-input-savePath"><i class="icon-tag"></i>Save path</label>
-    <input type="text" id="node-input-savePath" placeholder="Save path">
-  </div>
-  <div class="form-row">
-    <label for="node-input-saveName"><i class="icon-tag"></i>Save name</label>
-    <input type="text" id="node-input-saveName" placeholder="Save name">
-  </div>
-  <div class="form-row">
-    <label for="node-input-maxDepth"><i class="icon-tag"></i>Max depth</label>
-    <input type="number" id="node-input-maxDepth" placeholder="Max depth of the tree.">
-  </div>
-  <div class="form-row">
-    <label for="node-input-criterion"><i class="icon-tag"></i>Criterion</label>
-    <select id="node-input-criterion">
-      <option value="gini" selected>gini</option>
-      <option value="entropy">entropy</option>
-    </select>
-  </div>
-  <div class="form-row">
-    <label for="node-input-splitter"><i class="icon-tag"></i>Splitter</label>
-    <select id="node-input-splitter">
-      <option value="best" selected>best</option>
-      <option value="random">random</option>
-    </select>
-  </div>
+	<div class="form-row">
+		<label for="node-input-name"><i class="icon-tag"></i>Name</label>
+		<input type="text" id="node-input-name" placeholder="Name">
+	</div>
+	<div class="form-row">
+		<label for="node-input-savePath"><i class="icon-tag"></i>Save path</label>
+		<input type="text" id="node-input-savePath" placeholder="Save path">
+	</div>
+	<div class="form-row">
+		<label for="node-input-saveName"><i class="icon-tag"></i>Save name</label>
+		<input type="text" id="node-input-saveName" placeholder="Save name">
+	</div>
+	<div class="form-row">
+		<label for="node-input-maxDepth"><i class="icon-tag"></i>Max depth</label>
+		<input type="number" id="node-input-maxDepth" placeholder="Max depth of the tree.">
+	</div>
+	<div class="form-row">
+		<label for="node-input-criterion"><i class="icon-tag"></i>Criterion</label>
+		<select id="node-input-criterion">
+			<option value="gini" selected>gini</option>
+			<option value="entropy">entropy</option>
+		</select>
+	</div>
+	<div class="form-row">
+		<label for="node-input-splitter"><i class="icon-tag"></i>Splitter</label>
+		<select id="node-input-splitter">
+			<option value="best" selected>best</option>
+			<option value="random">random</option>
+		</select>
+	</div>
 </script>
 
 <script type="text/x-red" data-help-name="decision tree classifier">
-  <p>A node that trains a Decision Tree Classifier model.</p>
+	<p>A node that trains a Decision Tree Classifier model.</p>
 </script>

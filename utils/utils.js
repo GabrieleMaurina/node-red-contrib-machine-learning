@@ -48,9 +48,20 @@ const python = (node) => {
 	node.proc.stdin.write(JSON.stringify(node.msg.payload) + '\n')
 }
 
-
-
 module.exports = {
+	listOfInt: (str) => {
+		var ints = null
+		try{
+			ints = str.replace(' ', '').split(',').map((n) => parseInt(n))
+			if(ints.some(isNaN)){
+				ints = null
+			}
+		}
+		finally{
+			return ints
+		}
+	},
+
 	run: (RED, node, config) => {
 	  RED.nodes.createNode(node, config)
 		node.status(status.NONE)

@@ -8,10 +8,10 @@
       			saveFolder: {value:""},
       			saveName: {value:""},
       			input: {value:""},
-      			output: {value:"", type:"int"},
-      			trainingPartition: {value:"100", type:"int"},
-      			shuffle: {value: "", type:"boolean"},
-      			seed: {value: "1", type:"int"}
+      			output: {value:""},
+      			trainingPartition: {value:""},
+      			shuffle: {value: ""},
+      			seed: {value: ""}
         },
         inputs:1,
         outputs:1,
@@ -41,15 +41,15 @@
     </div>
 	<div class="form-row">
         <label for="node-input-input"><i class="icon-tag"></i>Input</label>
-        <input type="text" id="node-input-input" placeholder="Input columns numbers">
+        <input type="text" id="node-input-input" placeholder="0">
     </div>
 	<div class="form-row">
         <label for="node-input-output"><i class="icon-tag"></i>Output</label>
-        <input type="number" id="node-input-output" placeholder="Output column number">
+        <input type="number" id="node-input-output" placeholder="">
     </div>
 	<div class="form-row">
         <label for="node-input-trainingPartition"><i class="icon-tag"></i>Training partition</label>
-        <input type="number" id="node-input-trainingPartition" placeholder="Training partition in % of dataset">
+        <input type="number" id="node-input-trainingPartition" placeholder="80">
     </div>
 	<div class="form-row">
         <label for="node-input-shuffle"><i class="icon-tag"></i>Shuffle dataset</label>
@@ -57,7 +57,7 @@
     </div>
 	<div class="form-row">
         <label for="node-input-seed"><i class="icon-tag"></i>Seed</label>
-        <input type="number" id="node-input-seed" placeholder="seed">
+        <input type="number" id="node-input-seed" placeholder="0">
     </div>
 </script>
 
