@@ -1,0 +1,56 @@
+<script type="text/javascript">
+	RED.nodes.registerType('elliptic envelope classifier',{
+		category: 'machine learning',
+		color: '#DAC4B4',
+		defaults: {
+			name: {value:""},
+			savePath: {value:""},
+			saveName: {value:""},
+			contamination: {value:""},
+			centered: {value:""},
+			fraction: {value:""},
+			seed: {value:""}
+		},
+		inputs:1,
+		outputs:2,
+		icon: "file.png",
+		label: function() {
+			return this.name||"elliptic envelope classifier";
+		}
+	});
+</script>
+
+<script type="text/x-red" data-template-name="elliptic envelope classifier">
+	<div class="form-row">
+		<label for="node-input-name"><i class="icon-tag"></i>Name</label>
+		<input type="text" id="node-input-name" placeholder="Name">
+	</div>
+	<div class="form-row">
+		<label for="node-input-savePath"><i class="icon-tag"></i>Save path</label>
+		<input type="text" id="node-input-savePath" placeholder="Save path">
+	</div>
+	<div class="form-row">
+		<label for="node-input-saveName"><i class="icon-tag"></i>Save name</label>
+		<input type="text" id="node-input-saveName" placeholder="Save name">
+	</div>
+	<div class="form-row">
+		<label for="node-input-contamination"><i class="icon-tag"></i>Contamination</label>
+		<input type="text" id="node-input-contamination" placeholder="0.1">
+	</div>
+	<div class="form-row">
+        <label for="node-input-centered"><i class="icon-tag"></i>Assume centered</label>
+        <input type="checkbox" id="node-input-centered">
+    </div>
+	<div class="form-row">
+		<label for="node-input-fraction"><i class="icon-tag"></i>Support fraction</label>
+		<input type="text" id="node-input-fraction" placeholder="">
+	</div>
+	<div class="form-row">
+		<label for="node-input-seed"><i class="icon-tag"></i>Seed</label>
+		<input type="number" id="node-input-seed" placeholder="">
+	</div>
+</script>
+
+<script type="text/x-red" data-help-name="elliptic envelope classifier">
+	<p>A node that trains an Elliptic Envelope Classifier model for outlier detection.</p>
+</script>

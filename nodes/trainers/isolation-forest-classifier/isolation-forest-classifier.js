@@ -1,21 +1,21 @@
 module.exports = function(RED){
-	function dTCNode(config){
+	function iFCNode(config){
 		const path = require('path')
 		const utils = require('../../../utils/utils')
 
 		var node = this;
 		node.file = __dirname +  '\\..\\trainer.py'
 		node.config = {
-			classifier: 'decision-tree-classifier',
+			classifier: 'isolation-forest-classifier',
 			save: path.join(config.savePath, config.saveName),
 			kwargs: {
-				max_depth: parseInt(config.depth) || undefined,
-				criterion: config.criterion || undefined,
-				splitter: config.splitter || undefined
+				n_estimators: parseInt(config.numTrees) || undefined,
+				contamination: Number(config.contamination),
+				random_state: parseInt(config.seed) || undefined
 			}
 		}
 
 		utils.run(RED, node, config)
 	}
-	RED.nodes.registerType("decision tree classifier", dTCNode)
+	RED.nodes.registerType("isolation forest classifier", iFCNode)
 }

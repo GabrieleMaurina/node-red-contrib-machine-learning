@@ -1,39 +1,42 @@
 {
-  "name": "node-red-machine-learning",
-  "version": "1.0.0",
-  "description": "Machine learning package for node-red.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "node-red",
-    "machine learning"
-  ],
-  "author": "Gabriele Maurina",
-  "license": "ISC",
-  "node-red": {
-    "nodes": {
-      "CreateDataset": "nodes\\dataset\\create-dataset\\create-dataset.js",
-      "LoadDataset": "nodes\\dataset\\load-dataset\\load-dataset.js",
-      "Predictor": "nodes\\predictor\\predictor.js",
-      "Assessment": "nodes\\assessment\\assessment.js",
-      "decision tree classifier": "nodes\\trainers\\decision-tree-classifier\\decision-tree-classifier.js",
-      "deep neural network classifier": "nodes\\trainers\\deep-neural-network-classifier\\deep-neural-network-classifier.js",
-      "k neighbors classifier": "nodes\\trainers\\k-neighbors-classifier\\k-neighbors-classifier.js",
-      "multi layer perceptron classifier": "nodes\\trainers\\multi-layer-perceptron-classifier\\multi-layer-perceptron-classifier.js",
-      "random forest classifier": "nodes\\trainers\\random-forest-classifier\\random-forest-classifier.js",
-      "support vector classifier": "nodes\\trainers\\support-vector-classifier\\support-vector-classifier.js"
-    }
-  },
-  "dependencies": {
-    "child_process": "^1.0.2",
-    "fs": "0.0.1-security",
-    "path": "^0.12.7",
-    "request": "^2.83.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/GabrieleMaurina/node-red-machine-learning.git"
-  }
+	"name": "node-red-machine-learning",
+	"version": "1.0.0",
+	"description": "Machine learning package for node-red.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"node-red",
+		"machine learning"
+	],
+	"author": "Gabriele Maurina",
+	"license": "ISC",
+	"node-red": {
+		"nodes": {
+			"create dataset": "nodes\\dataset\\create-dataset\\create-dataset.js",
+			"load dataset": "nodes\\dataset\\load-dataset\\load-dataset.js",
+			"predictor": "nodes\\predictor\\predictor.js",
+			"assessment": "nodes\\assessment\\assessment.js",
+			"decision tree classifier": "nodes\\trainers\\decision-tree-classifier\\decision-tree-classifier.js",
+			"deep neural network classifier": "nodes\\trainers\\deep-neural-network-classifier\\deep-neural-network-classifier.js",
+			"elliptic envelope classifier": "nodes\\trainers\\elliptic-envelope-classifier\\elliptic-envelope-classifier.js",
+			"isolation forest classifier": "nodes\\trainers\\isolation-forest-classifier\\isolation-forest-classifier.js",
+			"k neighbors classifier": "nodes\\trainers\\k-neighbors-classifier\\k-neighbors-classifier.js",
+			"multi layer perceptron classifier": "nodes\\trainers\\multi-layer-perceptron-classifier\\multi-layer-perceptron-classifier.js",
+			"one class support vector classifier": "nodes\\trainers\\one-class-support-vector-classifier\\one-class-support-vector-classifier.js",
+			"random forest classifier": "nodes\\trainers\\random-forest-classifier\\random-forest-classifier.js",
+			"support vector classifier": "nodes\\trainers\\support-vector-classifier\\support-vector-classifier.js"
+		}
+	},
+	"dependencies": {
+		"child_process": "^1.0.2",
+		"fs": "0.0.1-security",
+		"path": "^0.12.7",
+		"request": "^2.83.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/GabrieleMaurina/node-red-machine-learning.git"
+	}
 }

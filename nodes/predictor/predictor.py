@@ -8,12 +8,22 @@ from dnnctf import DNNCTF
 
 config = json.loads(input())
 
-try:
-	model = SKLW(path=config['path'])
-except:
-	model = DNNCTF(path=config['path'], load=True)
+def load():
+	try:
+		return SKLW(path=config['path'])
+	except:
+		try:
+			return DNNCTF(path=config['path'], load=True)
+		except:
+			return None
+
+model = load()
 
 while True:
 	features = pandas.read_json(input(), orient='values')
+	if model is None:
+		model = load()
+	if model is None:
+		raise('Cannot find model.')
 	model.update()
 	print(json.dumps(model.predict(features)))
