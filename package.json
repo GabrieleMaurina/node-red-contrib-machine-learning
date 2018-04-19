@@ -1,5 +1,5 @@
 {
-	"name": "node-red-machine-learning",
+	"name": "node-red-contrib-machine-learning",
 	"version": "1.0.0",
 	"description": "Machine learning package for node-red.",
 	"main": "index.js",
@@ -31,12 +31,10 @@
 	},
 	"dependencies": {
 		"child_process": "^1.0.2",
-		"fs": "0.0.1-security",
-		"path": "^0.12.7",
-		"request": "^2.83.0"
+		"path": "^0.12.7"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/GabrieleMaurina/node-red-machine-learning.git"
+		"url": "https://github.com/GabrieleMaurina/node-red-contrib-machine-learning.git"
 	}
 }
