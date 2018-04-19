@@ -1,7 +1,7 @@
 <script type="text/javascript">
 	RED.nodes.registerType('one class support vector classifier',{
 		category: 'machine learning',
-		color: '#DAC4B4',
+		color: '#C0C0C0',
 		defaults: {
 			name: {value:""},
 			savePath: {value:""},
@@ -49,4 +49,41 @@
 
 <script type="text/x-red" data-help-name="one class support vector classifier">
 	<p>A node that trains an One Class Support Vector Classifier model for outlier detection.</p>
+
+	<h3>Inputs</h3>
+	<dl class="message-properties">
+		<dt>payload
+			<span class="property-type">object</span>
+		</dt>
+		<dd>the training dataset.</dd>
+	</dl>
+
+	<h3>Outputs</h3>
+	<ol class="node-ports">
+		<li>Standard output
+			<dl class="message-properties">
+				<dt>payload <span class="property-type">string</span></dt>
+				<dd>the result of the training operation.</dd>
+			</dl>
+		</li>
+		<li>Standard error
+			<dl class="message-properties">
+				<dt>payload <span class="property-type">string</span></dt>
+				<dd>the standard error of the command.</dd>
+			</dl>
+		</li>
+	</ol>
+
+	<h3>Details</h3>
+	<p>
+		<code>msg.payload</code> is an array containing training cases.
+	</p>
+	<p>
+		This node fits a one class support vector classifier to such array in order to permorm outlier detection.
+	</p>
+
+	<h3>References</h3>
+	<ul>
+		<li><a href="https://github.com/GabrieleMaurina/node-red-contrib-machine-learning">GitHub</a> - the nodes github repository</li>
+	</ul>
 </script>

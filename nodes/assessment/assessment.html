@@ -1,43 +1,88 @@
 <script type="text/javascript">
-RED.nodes.registerType('assessment',{
-  category: 'machine learning',
-  color: '#E9967A',
-  defaults: {
-    name: {value:""},
-    score: {value:"accuracy_score"}
-  },
-  inputs:1,
-  outputs:2,
-  icon: "function.png",
-  label: function() {
-    return this.name||"assessment";
-  }
-});
+	RED.nodes.registerType('assessment',{
+		category: 'machine learning',
+		color: '#E9967A',
+		defaults: {
+			name: {value:""},
+			score: {value:"accuracy_score"}
+		},
+		inputs:1,
+		outputs:2,
+		icon: "function.png",
+		label: function() {
+			return this.name||"assessment";
+		}
+	});
 </script>
 
 <script type="text/x-red" data-template-name="assessment">
-  <div class="form-row">
-    <label for="node-input-name"><i class="icon-tag"></i>Name</label>
-    <input type="text" id="node-input-name" placeholder="Name">
-  </div>
-  <div class="form-row">
-    <label for="node-input-score"><i class="icon-tag"></i>Type</label>
-    <select id="node-input-score">
-      <option value="accuracy_score" selected>accuracy</option>
-      <option value="cohen_kappa_score">cohen kappa</option>
-      <option value="confusion_matrix">confusion matrix</option>
-      <option value="f1_score">f1</option>
-      <option value="fbeta_score">fbeta</option>
-      <option value="hamming_loss">hamming loss</option>
-      <option value="jaccard_similarity_score">jaccard similarity</option>
-      <option value="matthews_corrcoef">matthews correlation coefficient</option>
-      <option value="precision_score">precision</option>
-      <option value="recall_score">recall</option>
-      <option value="zero_one_loss">zero one loss</option>
-    </select>
-  </div>
+	<div class="form-row">
+		<label for="node-input-name"><i class="icon-tag"></i>Name</label>
+		<input type="text" id="node-input-name" placeholder="Name">
+	</div>
+	<div class="form-row">
+		<label for="node-input-score"><i class="icon-tag"></i>Type</label>
+		<select id="node-input-score">
+			<option value="accuracy_score" selected>accuracy</option>
+			<option value="cohen_kappa_score">cohen kappa</option>
+			<option value="confusion_matrix">confusion matrix</option>
+			<option value="f1_score">f1</option>
+			<option value="fbeta_score">fbeta</option>
+			<option value="hamming_loss">hamming loss</option>
+			<option value="jaccard_similarity_score">jaccard similarity</option>
+			<option value="matthews_corrcoef">matthews correlation coefficient</option>
+			<option value="precision_score">precision</option>
+			<option value="recall_score">recall</option>
+			<option value="zero_one_loss">zero one loss</option>
+		</select>
+	</div>
 </script>
 
 <script type="text/x-red" data-help-name="assessment">
-  <p>A node that does assessment over a real and a predicted output.</p>
+	<p>A node that does assessment over real and predicted data.</p>
+
+	<h3>Inputs</h3>
+	<dl class="message-properties">
+		<dt>payload
+			<span class="property-type">object</span>
+		</dt>
+		<dd>the data to analyze.</dd>
+
+		<dt>topic
+			<span class="property-type">string</span>
+		</dt>
+		<dd>REAL or PREDICTED, tells the node how to consider the data.</dd>
+	</dl>
+
+	<h3>Outputs</h3>
+	<ol class="node-ports">
+		<li>Standard output
+			<dl class="message-properties">
+				<dt>payload <span class="property-type">number</span></dt>
+				<dd>the result of the assessment operation.</dd>
+			</dl>
+		</li>
+		<li>Standard error
+			<dl class="message-properties">
+				<dt>payload <span class="property-type">string</span></dt>
+				<dd>the standard error of the command.</dd>
+			</dl>
+		</li>
+	</ol>
+
+	<h3>Details</h3>
+	<p>
+		<code>msg.payload</code> is an array containing either predictions or true labels.
+	</p>
+	<p>
+		<code>msg.topic</code> specifies what is contained in <code>msg.payload</code>.
+	</p>
+	<p>
+		Each time a new PREDICTED payload arrives, assessment is carried out with the last received REAL payload.
+	</p>
+
+	<h3>References</h3>
+	<ul>
+		<li><a href="https://github.com/GabrieleMaurina/node-red-contrib-machine-learning">GitHub</a> - the nodes github repository</li>
+	</ul>
 </script>

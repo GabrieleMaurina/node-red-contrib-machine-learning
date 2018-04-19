@@ -9,10 +9,10 @@ module.exports = function(RED){
 		}
 		node.data = {}
 		node.preMsg = (msg, done) => {
-			if(msg.topic == 'real'){
+			if(msg.topic.toLowerCase() == 'real'){
 				node.data.real = msg.payload
 			}
-			else if(msg.topic == 'predicted'){
+			else if(msg.topic.toLowerCase() == 'predicted'){
 				node.data.predicted = msg.payload
 				if(node.data.real){
 					msg.payload = node.data
