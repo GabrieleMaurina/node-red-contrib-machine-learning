@@ -15,4 +15,7 @@ To install the stable version use the Menu - Manage palette option and search fo
     npm i node-red-contrib-machine-learning
 
 ## Usage
-Not written yet.
+Classification
+![classification](https://i.imgur.com/GGBSYH3.png "Training, classification and evaluation")
+Outlier detection
+![outlier detection](https://i.imgur.com/pyj0ROd.png "Training, outlier detection and evaluation")
