@@ -8,7 +8,17 @@
 	},
 	"keywords": [
 		"node-red",
-		"machine learning"
+		"machine learning",
+		"ml",
+		"tensorflow",
+		"scikit learn",
+		"scikit",
+		"sklearn",
+		"classification",
+		"regression",
+		"clustering",
+		"outlier detection",
+		"novelty detection"
 	],
 	"author": "Gabriele Maurina",
 	"license": "ISC",
