@@ -1,5 +1,5 @@
 # node-red-contrib-machine-learning
-This module provides a set of nodes in Node-RED with machine learning functionalities.
+This module provides a set of nodes for Node-RED with machine learning functionalities.
 Such nodes have a python core that takes advantage of common ML libraries.
 
 ## Pre requisites
