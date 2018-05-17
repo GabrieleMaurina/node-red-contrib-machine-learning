@@ -3,7 +3,7 @@ import pickle
 import pandas
 import os
 import sys
-sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '\\..\\..\\utils')
+sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/../../utils')
 from sklw import SKLW
 from dnnctf import DNNCTF
 
@@ -13,7 +13,11 @@ config = json.loads(input())
 save = config['save']
 
 while True:
-	df = pandas.read_json(input(), orient='values')
+	data = input()
+	try:
+		df = pandas.read_json(data, orient='values')
+	except:
+		df = pandas.read_csv(json.loads(data)['file'], header=None)
 
 	if config['classifier'] in OUTLIER_DETECTORS:
 		x = df
@@ -51,6 +55,10 @@ while True:
 		from sklearn.svm import SVC
 		classifier = SKLW(path=save, model=SVC(**config['kwargs']))
 
-	classifier.fit(x, y)
+	try:
+		classifier.fit(x, y)
+	except Exception as e:
+		print(e)
+		raise()
 
 	print(config['classifier'] + ': training completed.')

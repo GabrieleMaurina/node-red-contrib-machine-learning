@@ -27,7 +27,7 @@ while True:
 	if not os.path.isdir(config['save']):
 		os.makedirs(config['save'], exist_ok=True)
 
-	x_train.to_csv(config['save'] + '\\train.csv', header=None, index=False)
-	x_test.to_csv(config['save'] + '\\test.csv', header=None, index=False)
+	x_train.to_csv(config['save'] + '/train.csv', header=None, index=False)
+	x_test.to_csv(config['save'] + '/test.csv', header=None, index=False)
 
 	print('Dataset created.')

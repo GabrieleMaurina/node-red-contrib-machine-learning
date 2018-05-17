@@ -4,7 +4,7 @@ module.exports = function(RED){
 		const utils = require('../../../utils/utils')
 
 		var node = this
-		node.file = __dirname + '\\load-dataset.py'
+		node.file = __dirname + '/load-dataset.py'
 		node.topic = 'real'
 		node.config = {
 			path: path.join(config.datasetFolder, config.datasetName, config.partition),

@@ -4,7 +4,7 @@ import os
 class SKLW:
 	def __init__(self, path, model=None):
 		self.path = path
-		if model != None:
+		if model is not None:
 			self.model = model
 		else:
 			self.last = os.stat(self.path).st_mtime

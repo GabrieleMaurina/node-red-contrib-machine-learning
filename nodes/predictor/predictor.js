@@ -4,7 +4,7 @@ module.exports = function(RED){
     const utils = require('../../utils/utils')
 
     var node = this;
-    node.file = __dirname + '\\predictor.py'
+    node.file = __dirname + '/predictor.py'
     node.topic = 'predicted'
     node.config = {
       path: path.join(config.modelPath, config.modelName)

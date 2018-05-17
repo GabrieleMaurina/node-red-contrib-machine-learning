@@ -3,7 +3,7 @@ module.exports = function(RED){
 		const utils = require('../../utils/utils')
 
 		var node = this;
-		node.file = __dirname + '\\assessment.py'
+		node.file = __dirname + '/assessment.py'
 		node.config = {
 			score: config.score
 		}
