@@ -5,7 +5,7 @@ Classification and outlier detection can be performed through the use of this pa
 
 ## Pre requisites
 Install the following python libraries
-* Python 3.6.4 or higher
+* Python 3.6.4 or higher accessible with the command 'python' (on linux 'python3')
 * Numpy
 * Pandas
 * SciKit-Learn
@@ -18,6 +18,7 @@ To install the latest version use the Menu - Manage palette option and search fo
 
 ## Usage
 This flows show how to create a datasets, train models and then evaluate them. Models, after training, can be use in real scenarios to make predictions.
+These flows and the test datasets are available in the 'test' folder.
 
 Classification
 ![classification](https://i.imgur.com/GGBSYH3.png "Training, classification and evaluation")
