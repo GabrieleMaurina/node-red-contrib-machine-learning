@@ -17,8 +17,8 @@ To install the latest version use the Menu - Manage palette option and search fo
     npm i node-red-contrib-machine-learning
 
 ## Usage
-This flows show how to create a datasets, train models and then evaluate them. Models, after training, can be use in real scenarios to make predictions.
-These flows and the test datasets are available in the 'test' folder.
+These flows create datasets, train models and then evaluate them. Models, after training, can be use in real scenarios to make predictions.
+The flows and the test datasets are available in the 'test' folder.
 
 Classification
 ![classification](https://i.imgur.com/GGBSYH3.png "Training, classification and evaluation")
