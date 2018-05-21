@@ -29,7 +29,7 @@ Example flows available here:
 ```json
 [
     {
-        "id": "b91d4434.7851b8",
+        "id": "93db356f.293b98",
         "type": "create dataset",
         "z": "21ce826.2ff977e",
         "name": "",
@@ -42,15 +42,15 @@ Example flows available here:
         "shuffle": true,
         "seed": "",
         "x": 340,
-        "y": 40,
+        "y": 80,
         "wires": [
             [
-                "3e5094c8.88bf9c"
+                "9ff35f4d.c2ad9"
             ]
         ]
     },
     {
-        "id": "59363047.dc2da",
+        "id": "207460b8.c41f3",
         "type": "load dataset",
         "z": "21ce826.2ff977e",
         "name": "",
@@ -63,20 +63,15 @@ Example flows available here:
         "y": 200,
         "wires": [
             [
-                "e41f5b9.cb8a4a8",
-                "f0dd65dd.bd7698",
-                "55cfde32.811c5",
-                "e12eaf38.e871b",
-                "db825395.34fbf",
-                "d0b283ca.68ff"
+                "c59a7c79.3f134"
             ],
             [
-                "f55efac2.3d0498"
+                "ad3be981.48d948"
             ]
         ]
     },
     {
-        "id": "ae3e4a60.60e878",
+        "id": "726efdc3.fa33e4",
         "type": "inject",
         "z": "21ce826.2ff977e",
         "name": "Start",
@@ -88,15 +83,15 @@ Example flows available here:
         "once": false,
         "onceDelay": 0.1,
         "x": 110,
-        "y": 40,
+        "y": 80,
         "wires": [
             [
-                "b91d4434.7851b8"
+                "93db356f.293b98"
             ]
         ]
     },
     {
-        "id": "dc773b02.966158",
+        "id": "c3708b63.07fc58",
         "type": "inject",
         "z": "21ce826.2ff977e",
         "name": "Start",
@@ -111,12 +106,12 @@ Example flows available here:
         "y": 200,
         "wires": [
             [
-                "59363047.dc2da"
+                "207460b8.c41f3"
             ]
         ]
     },
     {
-        "id": "af4918fd.76bfc8",
+        "id": "b38a012c.50199",
         "type": "inject",
         "z": "21ce826.2ff977e",
         "name": "Start",
@@ -128,16 +123,16 @@ Example flows available here:
         "once": false,
         "onceDelay": 0.1,
         "x": 110,
-        "y": 460,
+        "y": 440,
         "wires": [
             [
-                "a6686ef9.88fa9",
-                "89ba836a.6f936"
+                "d7fb8e35.b024e",
+                "13076c8a.76e763"
             ]
         ]
     },
     {
-        "id": "3e5094c8.88bf9c",
+        "id": "9ff35f4d.c2ad9",
         "type": "debug",
         "z": "21ce826.2ff977e",
         "name": "print",
@@ -147,11 +142,11 @@ Example flows available here:
         "tostatus": false,
         "complete": "payload",
         "x": 570,
-        "y": 40,
+        "y": 80,
         "wires": []
     },
     {
-        "id": "f55efac2.3d0498",
+        "id": "ad3be981.48d948",
         "type": "debug",
         "z": "21ce826.2ff977e",
         "name": "error",
@@ -165,7 +160,7 @@ Example flows available here:
         "wires": []
     },
     {
-        "id": "98372bbc.d92818",
+        "id": "62ddfeb7.a671e",
         "type": "debug",
         "z": "21ce826.2ff977e",
         "name": "print",
@@ -174,153 +169,68 @@ Example flows available here:
         "console": false,
         "tostatus": false,
         "complete": "payload",
-        "x": 770,
+        "x": 750,
         "y": 160,
         "wires": []
     },
     {
-        "id": "7b15556d.2c6a3c",
+        "id": "20466934.bdedb6",
         "type": "predictor",
         "z": "21ce826.2ff977e",
-        "name": "dtc",
+        "name": "decision tree classifier predictor",
         "modelPath": "test/models",
         "modelName": "dtc.b",
-        "x": 450,
-        "y": 400,
+        "x": 550,
+        "y": 420,
         "wires": [
             [
-                "efec6607.d60718"
+                "eb276c42.4871d"
             ],
             [
-                "24adf18f.01621e"
+                "ee14e0a4.64677"
             ]
         ]
     },
     {
-        "id": "e41f5b9.cb8a4a8",
+        "id": "c59a7c79.3f134",
         "type": "decision tree classifier",
         "z": "21ce826.2ff977e",
-        "name": "",
+        "name": "decision tree classifier trainer",
         "savePath": "test/models",
         "saveName": "dtc.b",
         "maxDepth": "",
         "criterion": "gini",
         "splitter": "best",
-        "x": 520,
-        "y": 100,
+        "x": 540,
+        "y": 200,
         "wires": [
             [
-                "98372bbc.d92818"
+                "62ddfeb7.a671e"
             ],
             [
-                "f55efac2.3d0498"
+                "ad3be981.48d948"
             ]
         ]
     },
     {
-        "id": "55cfde32.811c5",
-        "type": "k neighbors classifier",
-        "z": "21ce826.2ff977e",
-        "name": "",
-        "savePath": "test/models",
-        "saveName": "knc.b",
-        "neighbors": "3",
-        "weights": "uniform",
-        "x": 520,
-        "y": 180,
-        "wires": [
-            [
-                "98372bbc.d92818"
-            ],
-            [
-                "f55efac2.3d0498"
-            ]
-        ]
-    },
-    {
-        "id": "e12eaf38.e871b",
-        "type": "multi layer perceptron classifier",
-        "z": "21ce826.2ff977e",
-        "name": "",
-        "savePath": "test/models",
-        "saveName": "mlpc.b",
-        "layers": "",
-        "activation": "relu",
-        "solver": "adam",
-        "learningRate": "",
-        "maxIter": "500",
-        "batchSize": "20",
-        "x": 530,
-        "y": 220,
-        "wires": [
-            [
-                "98372bbc.d92818"
-            ],
-            [
-                "f55efac2.3d0498"
-            ]
-        ]
-    },
-    {
-        "id": "db825395.34fbf",
-        "type": "random forest classifier",
-        "z": "21ce826.2ff977e",
-        "name": "",
-        "savePath": "test/models",
-        "saveName": "rfc.b",
-        "criterion": "gini",
-        "numTrees": "5",
-        "maxDepth": "",
-        "x": 530,
-        "y": 260,
-        "wires": [
-            [
-                "98372bbc.d92818"
-            ],
-            [
-                "f55efac2.3d0498"
-            ]
-        ]
-    },
-    {
-        "id": "d0b283ca.68ff",
-        "type": "support vector classifier",
-        "z": "21ce826.2ff977e",
-        "name": "",
-        "savePath": "test/models",
-        "saveName": "svc.b",
-        "c": "",
-        "kernel": "rbf",
-        "x": 530,
-        "y": 300,
-        "wires": [
-            [
-                "98372bbc.d92818"
-            ],
-            [
-                "f55efac2.3d0498"
-            ]
-        ]
-    },
-    {
-        "id": "efec6607.d60718",
+        "id": "eb276c42.4871d",
         "type": "assessment",
         "z": "21ce826.2ff977e",
         "name": "",
         "score": "accuracy_score",
-        "x": 630,
-        "y": 380,
+        "x": 590,
+        "y": 360,
         "wires": [
             [
-                "be32b25.fdbbc5"
+                "44e5117c.d4fd"
             ],
             [
-                "24adf18f.01621e"
+                "ee14e0a4.64677"
             ]
         ]
     },
     {
-        "id": "a6686ef9.88fa9",
+        "id": "d7fb8e35.b024e",
         "type": "load dataset",
         "z": "21ce826.2ff977e",
         "name": "",
@@ -330,18 +240,18 @@ Example flows available here:
         "input": false,
         "output": true,
         "x": 290,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
-                "efec6607.d60718"
+                "eb276c42.4871d"
             ],
             [
-                "24adf18f.01621e"
+                "ee14e0a4.64677"
             ]
         ]
     },
     {
-        "id": "89ba836a.6f936",
+        "id": "13076c8a.76e763",
         "type": "load dataset",
         "z": "21ce826.2ff977e",
         "name": "",
@@ -351,23 +261,18 @@ Example flows available here:
         "input": true,
         "output": false,
         "x": 290,
-        "y": 500,
+        "y": 480,
         "wires": [
             [
-                "7b15556d.2c6a3c",
-                "c6393eed.fd155",
-                "56cb443.efe90bc",
-                "fb9efa03.8e7218",
-                "ce891246.f9deb",
-                "daebffae.a0af2"
+                "20466934.bdedb6"
             ],
             [
-                "24adf18f.01621e"
+                "ee14e0a4.64677"
             ]
         ]
     },
     {
-        "id": "24adf18f.01621e",
+        "id": "ee14e0a4.64677",
         "type": "debug",
         "z": "21ce826.2ff977e",
         "name": "error",
@@ -377,11 +282,11 @@ Example flows available here:
         "tostatus": false,
         "complete": "payload",
         "x": 790,
-        "y": 500,
+        "y": 480,
         "wires": []
     },
     {
-        "id": "be32b25.fdbbc5",
+        "id": "44e5117c.d4fd",
         "type": "debug",
         "z": "21ce826.2ff977e",
         "name": "print",
@@ -391,120 +296,8 @@ Example flows available here:
         "tostatus": false,
         "complete": "payload",
         "x": 790,
-        "y": 380,
+        "y": 360,
         "wires": []
-    },
-    {
-        "id": "56cb443.efe90bc",
-        "type": "predictor",
-        "z": "21ce826.2ff977e",
-        "name": "knc",
-        "modelPath": "test/models",
-        "modelName": "knc.b",
-        "x": 450,
-        "y": 480,
-        "wires": [
-            [
-                "efec6607.d60718"
-            ],
-            [
-                "24adf18f.01621e"
-            ]
-        ]
-    },
-    {
-        "id": "fb9efa03.8e7218",
-        "type": "predictor",
-        "z": "21ce826.2ff977e",
-        "name": "mlpc",
-        "modelPath": "test/models",
-        "modelName": "mlpc.b",
-        "x": 450,
-        "y": 520,
-        "wires": [
-            [
-                "efec6607.d60718"
-            ],
-            [
-                "24adf18f.01621e"
-            ]
-        ]
-    },
-    {
-        "id": "ce891246.f9deb",
-        "type": "predictor",
-        "z": "21ce826.2ff977e",
-        "name": "rfc",
-        "modelPath": "test/models",
-        "modelName": "rfc.b",
-        "x": 450,
-        "y": 560,
-        "wires": [
-            [
-                "efec6607.d60718"
-            ],
-            [
-                "24adf18f.01621e"
-            ]
-        ]
-    },
-    {
-        "id": "daebffae.a0af2",
-        "type": "predictor",
-        "z": "21ce826.2ff977e",
-        "name": "svc",
-        "modelPath": "test/models",
-        "modelName": "svc.b",
-        "x": 450,
-        "y": 600,
-        "wires": [
-            [
-                "efec6607.d60718"
-            ],
-            [
-                "24adf18f.01621e"
-            ]
-        ]
-    },
-    {
-        "id": "f0dd65dd.bd7698",
-        "type": "deep neural network classifier",
-        "z": "21ce826.2ff977e",
-        "name": "",
-        "savePath": "test/models",
-        "saveName": "dnn",
-        "layers": "",
-        "learningRate": "",
-        "steps": "",
-        "batchSize": "",
-        "x": 530,
-        "y": 140,
-        "wires": [
-            [
-                "98372bbc.d92818"
-            ],
-            [
-                "f55efac2.3d0498"
-            ]
-        ]
-    },
-    {
-        "id": "c6393eed.fd155",
-        "type": "predictor",
-        "z": "21ce826.2ff977e",
-        "name": "dnn",
-        "modelPath": "test/models",
-        "modelName": "dnn",
-        "x": 450,
-        "y": 440,
-        "wires": [
-            [
-                "efec6607.d60718"
-            ],
-            [
-                "24adf18f.01621e"
-            ]
-        ]
     }
 ]
 ```
