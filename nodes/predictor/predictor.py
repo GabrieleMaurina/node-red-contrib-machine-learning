@@ -3,16 +3,16 @@ import pandas
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/../../utils')
-from sklw import SKLW
-from dnnctf import DNNCTF
 
 config = json.loads(input())
 
 def load():
 	try:
+		from sklw import SKLW
 		return SKLW(path=config['path'])
 	except:
 		try:
+			from dnnctf import DNNCTF
 			return DNNCTF(path=config['path'], load=True)
 		except:
 			return None
