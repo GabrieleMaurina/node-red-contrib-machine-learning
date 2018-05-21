@@ -5,18 +5,21 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/../../utils')
 from sklw import SKLW
-from dnnctf import DNNCTF
 
 OUTLIER_DETECTORS = ['elliptic-envelope-classifier', 'isolation-forest-classifier', 'one-class-support-vector-classifier']
 
+#read configurations
 config = json.loads(input())
 save = config['save']
 
 while True:
+	#read request
 	data = input()
 	try:
+		#load data from request
 		df = pandas.read_json(data, orient='values')
 	except:
+		#lead file specified in the request
 		df = pandas.read_csv(json.loads(data)['file'], header=None)
 
 	if config['classifier'] in OUTLIER_DETECTORS:
@@ -32,6 +35,7 @@ while True:
 		from sklearn.tree import DecisionTreeClassifier
 		classifier = SKLW(path=save, model=DecisionTreeClassifier(**config['kwargs']))
 	elif config['classifier'] == 'deep-neural-network-classifier':
+		from dnnctf import DNNCTF
 		classifier = DNNCTF(path=save, del_prev_mod=True, **config['kwargs'])
 	if config['classifier'] == 'elliptic-envelope-classifier':
 		from sklearn.covariance import EllipticEnvelope
@@ -56,6 +60,7 @@ while True:
 		classifier = SKLW(path=save, model=SVC(**config['kwargs']))
 
 	try:
+		#train model
 		classifier.fit(x, y)
 	except Exception as e:
 		print(e)

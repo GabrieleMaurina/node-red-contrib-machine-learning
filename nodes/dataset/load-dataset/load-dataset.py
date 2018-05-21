@@ -2,11 +2,13 @@ import pandas
 import sys
 import json
 
+#read configurations
 config = json.loads(input())
 
-
 while True:
+	#wait request
     input()
+    
     if config['input'] or config['output']:
         df = pandas.read_csv(config['path'], header=None)
 

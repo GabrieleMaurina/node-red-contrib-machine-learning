@@ -4,6 +4,8 @@ module.exports = function(RED){
 		const utils = require('../../../utils/utils')
 
 		var node = this;
+
+		//set configurations
 		node.file = __dirname +  '/../trainer.py'
 		node.config = {
 			classifier: 'elliptic-envelope-classifier',

@@ -1,3 +1,5 @@
+#SciKit-Learn models' wrapper
+
 import pickle
 import os
 

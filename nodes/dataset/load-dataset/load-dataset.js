@@ -4,6 +4,8 @@ module.exports = function(RED){
 		const utils = require('../../../utils/utils')
 
 		var node = this
+
+		//set configurations
 		node.file = __dirname + '/load-dataset.py'
 		node.topic = 'real'
 		node.config = {
@@ -11,6 +13,7 @@ module.exports = function(RED){
 			input: Boolean(config.input),
 			output: Boolean(config.output)
 		}
+		
 		utils.run(RED, node, config)
 	}
 	RED.nodes.registerType("load dataset", loadDatasetNode);

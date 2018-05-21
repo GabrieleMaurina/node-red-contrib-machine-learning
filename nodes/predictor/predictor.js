@@ -4,6 +4,8 @@ module.exports = function(RED){
     const utils = require('../../utils/utils')
 
     var node = this;
+    
+    //set configurations
     node.file = __dirname + '/predictor.py'
     node.topic = 'predicted'
     node.config = {

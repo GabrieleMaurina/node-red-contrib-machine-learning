@@ -17,8 +17,10 @@
 		"classification",
 		"regression",
 		"clustering",
-		"outlier detection",
-		"novelty detection"
+		"outlier",
+		"novelty",
+		"anomaly",
+		"detection"
 	],
 	"author": "Gabriele Maurina",
 	"license": "ISC",
@@ -30,13 +32,13 @@
 			"assessment": "nodes/assessment/assessment.js",
 			"decision tree classifier": "nodes/trainers/decision-tree-classifier/decision-tree-classifier.js",
 			"deep neural network classifier": "nodes/trainers/deep-neural-network-classifier/deep-neural-network-classifier.js",
-			"elliptic envelope classifier": "nodes/trainers/elliptic-envelope-classifier/elliptic-envelope-classifier.js",
-			"isolation forest classifier": "nodes/trainers/isolation-forest-classifier/isolation-forest-classifier.js",
 			"k neighbors classifier": "nodes/trainers/k-neighbors-classifier/k-neighbors-classifier.js",
 			"multi layer perceptron classifier": "nodes/trainers/multi-layer-perceptron-classifier/multi-layer-perceptron-classifier.js",
-			"one class support vector classifier": "nodes/trainers/one-class-support-vector-classifier/one-class-support-vector-classifier.js",
 			"random forest classifier": "nodes/trainers/random-forest-classifier/random-forest-classifier.js",
-			"support vector classifier": "nodes/trainers/support-vector-classifier/support-vector-classifier.js"
+			"support vector classifier": "nodes/trainers/support-vector-classifier/support-vector-classifier.js",
+			"elliptic envelope classifier": "nodes/trainers/elliptic-envelope-classifier/elliptic-envelope-classifier.js",
+			"isolation forest classifier": "nodes/trainers/isolation-forest-classifier/isolation-forest-classifier.js",
+			"one class support vector classifier": "nodes/trainers/one-class-support-vector-classifier/one-class-support-vector-classifier.js"
 		}
 	},
 	"dependencies": {

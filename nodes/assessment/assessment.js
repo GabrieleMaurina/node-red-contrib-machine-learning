@@ -3,11 +3,15 @@ module.exports = function(RED){
 		const utils = require('../../utils/utils')
 
 		var node = this;
+		
+		//set configurations
 		node.file = __dirname + '/assessment.py'
 		node.config = {
 			score: config.score
 		}
 		node.data = {}
+
+		//handle messages
 		node.preMsg = (msg, done) => {
 			if(msg.topic.toLowerCase() == 'real'){
 				node.data.real = msg.payload

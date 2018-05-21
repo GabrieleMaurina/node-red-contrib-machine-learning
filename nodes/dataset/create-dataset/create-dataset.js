@@ -4,8 +4,9 @@ module.exports = function(RED){
 		const utils = require('../../../utils/utils')
 
 		var node = this;
-		node.file = __dirname + '/create-dataset.py'
 
+		//set configurations
+		node.file = __dirname + '/create-dataset.py'
 		node.config = {
 			path: config.path,
 			save: path.join(config.saveFolder, config.saveName),

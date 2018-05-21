@@ -2,9 +2,11 @@ import json
 import pandas
 import os
 
+#read configurations
 config = json.loads(input())
 
 while True:
+	#wait request
 	input()
 
 	df = pandas.read_csv(config['path'], header=None)

@@ -4,10 +4,13 @@ import sys
 import numpy
 from inspect import getargspec
 
+#read configurations
 config = json.loads(input())
 
 while True:
+	#read request
 	data = json.loads(input())
+	
 	get_score = getattr(m, config['score'])
 	kwargs = {}
 	if 'average' in getargspec(get_score).args:

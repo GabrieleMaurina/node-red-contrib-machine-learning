@@ -1,3 +1,5 @@
+#Tensorflow dnnc's wrapper
+
 import tensorflow as tf
 import logging
 import pickle
