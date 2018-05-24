@@ -39,7 +39,7 @@ Example flows available here:
 ```json
 [
     {
-        "id": "93db356f.293b98",
+        "id": "da8ca300.2dfe6",
         "type": "create dataset",
         "z": "21ce826.2ff977e",
         "name": "",
@@ -55,12 +55,12 @@ Example flows available here:
         "y": 80,
         "wires": [
             [
-                "9ff35f4d.c2ad9"
+                "4fb0a8dc.f6baf8"
             ]
         ]
     },
     {
-        "id": "207460b8.c41f3",
+        "id": "44b6f4b0.34d7dc",
         "type": "load dataset",
         "z": "21ce826.2ff977e",
         "name": "",
@@ -73,18 +73,18 @@ Example flows available here:
         "y": 200,
         "wires": [
             [
-                "c59a7c79.3f134"
+                "26110acb.cbf526"
             ],
             [
-                "ad3be981.48d948"
+                "86385870.9f6b88"
             ]
         ]
     },
     {
-        "id": "726efdc3.fa33e4",
+        "id": "4f7cc53d.87a22c",
         "type": "inject",
         "z": "21ce826.2ff977e",
-        "name": "Start",
+        "name": "start",
         "topic": "",
         "payload": "",
         "payloadType": "date",
@@ -96,15 +96,15 @@ Example flows available here:
         "y": 80,
         "wires": [
             [
-                "93db356f.293b98"
+                "da8ca300.2dfe6"
             ]
         ]
     },
     {
-        "id": "c3708b63.07fc58",
+        "id": "d3e9e7ab.a06d68",
         "type": "inject",
         "z": "21ce826.2ff977e",
-        "name": "Start",
+        "name": "start",
         "topic": "",
         "payload": "",
         "payloadType": "date",
@@ -116,15 +116,15 @@ Example flows available here:
         "y": 200,
         "wires": [
             [
-                "207460b8.c41f3"
+                "44b6f4b0.34d7dc"
             ]
         ]
     },
     {
-        "id": "b38a012c.50199",
+        "id": "b21982e2.99cf1",
         "type": "inject",
         "z": "21ce826.2ff977e",
-        "name": "Start",
+        "name": "start",
         "topic": "",
         "payload": "",
         "payloadType": "date",
@@ -136,13 +136,13 @@ Example flows available here:
         "y": 440,
         "wires": [
             [
-                "d7fb8e35.b024e",
-                "13076c8a.76e763"
+                "f1b47338.aab82",
+                "1ea9f445.89d0bc"
             ]
         ]
     },
     {
-        "id": "9ff35f4d.c2ad9",
+        "id": "4fb0a8dc.f6baf8",
         "type": "debug",
         "z": "21ce826.2ff977e",
         "name": "print",
@@ -156,7 +156,7 @@ Example flows available here:
         "wires": []
     },
     {
-        "id": "ad3be981.48d948",
+        "id": "86385870.9f6b88",
         "type": "debug",
         "z": "21ce826.2ff977e",
         "name": "error",
@@ -170,7 +170,7 @@ Example flows available here:
         "wires": []
     },
     {
-        "id": "62ddfeb7.a671e",
+        "id": "2270c854.c34e08",
         "type": "debug",
         "z": "21ce826.2ff977e",
         "name": "print",
@@ -184,7 +184,7 @@ Example flows available here:
         "wires": []
     },
     {
-        "id": "20466934.bdedb6",
+        "id": "e69a3271.c7cab",
         "type": "predictor",
         "z": "21ce826.2ff977e",
         "name": "decision tree classifier predictor",
@@ -194,15 +194,15 @@ Example flows available here:
         "y": 420,
         "wires": [
             [
-                "eb276c42.4871d"
+                "b8f2ab19.e693a8"
             ],
             [
-                "ee14e0a4.64677"
+                "f7c59de2.be773"
             ]
         ]
     },
     {
-        "id": "c59a7c79.3f134",
+        "id": "26110acb.cbf526",
         "type": "decision tree classifier",
         "z": "21ce826.2ff977e",
         "name": "decision tree classifier trainer",
@@ -215,15 +215,15 @@ Example flows available here:
         "y": 200,
         "wires": [
             [
-                "62ddfeb7.a671e"
+                "2270c854.c34e08"
             ],
             [
-                "ad3be981.48d948"
+                "86385870.9f6b88"
             ]
         ]
     },
     {
-        "id": "eb276c42.4871d",
+        "id": "b8f2ab19.e693a8",
         "type": "assessment",
         "z": "21ce826.2ff977e",
         "name": "",
@@ -232,15 +232,15 @@ Example flows available here:
         "y": 360,
         "wires": [
             [
-                "44e5117c.d4fd"
+                "808a0c93.8ee38"
             ],
             [
-                "ee14e0a4.64677"
+                "f7c59de2.be773"
             ]
         ]
     },
     {
-        "id": "d7fb8e35.b024e",
+        "id": "f1b47338.aab82",
         "type": "load dataset",
         "z": "21ce826.2ff977e",
         "name": "",
@@ -253,15 +253,15 @@ Example flows available here:
         "y": 360,
         "wires": [
             [
-                "eb276c42.4871d"
+                "b8f2ab19.e693a8"
             ],
             [
-                "ee14e0a4.64677"
+                "f7c59de2.be773"
             ]
         ]
     },
     {
-        "id": "13076c8a.76e763",
+        "id": "1ea9f445.89d0bc",
         "type": "load dataset",
         "z": "21ce826.2ff977e",
         "name": "",
@@ -274,15 +274,15 @@ Example flows available here:
         "y": 480,
         "wires": [
             [
-                "20466934.bdedb6"
+                "e69a3271.c7cab"
             ],
             [
-                "ee14e0a4.64677"
+                "f7c59de2.be773"
             ]
         ]
     },
     {
-        "id": "ee14e0a4.64677",
+        "id": "f7c59de2.be773",
         "type": "debug",
         "z": "21ce826.2ff977e",
         "name": "error",
@@ -296,7 +296,7 @@ Example flows available here:
         "wires": []
     },
     {
-        "id": "44e5117c.d4fd",
+        "id": "808a0c93.8ee38",
         "type": "debug",
         "z": "21ce826.2ff977e",
         "name": "print",
@@ -308,6 +308,86 @@ Example flows available here:
         "x": 790,
         "y": 360,
         "wires": []
+    },
+    {
+        "id": "8a4ea95c.f860b8",
+        "type": "predictor",
+        "z": "21ce826.2ff977e",
+        "name": "decision tree classifier predictor",
+        "modelPath": "test/models",
+        "modelName": "dtc.b",
+        "x": 450,
+        "y": 580,
+        "wires": [
+            [
+                "e967043f.480868"
+            ],
+            [
+                "e66df10b.40ba8"
+            ]
+        ]
+    },
+    {
+        "id": "e967043f.480868",
+        "type": "mqtt out",
+        "z": "21ce826.2ff977e",
+        "name": "",
+        "topic": "predictions",
+        "qos": "",
+        "retain": "",
+        "broker": "cb216faf.d9136",
+        "x": 730,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "e66df10b.40ba8",
+        "type": "debug",
+        "z": "21ce826.2ff977e",
+        "name": "error",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 710,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "3cd1a442.2bc73c",
+        "type": "mqtt in",
+        "z": "21ce826.2ff977e",
+        "name": "",
+        "topic": "classification",
+        "qos": "2",
+        "broker": "cb216faf.d9136",
+        "x": 140,
+        "y": 580,
+        "wires": [
+            [
+                "8a4ea95c.f860b8"
+            ]
+        ]
+    },
+    {
+        "id": "cb216faf.d9136",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "iot.eclipse.org",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": ""
     }
 ]
 ```
