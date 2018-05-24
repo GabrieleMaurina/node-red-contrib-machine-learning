@@ -20,7 +20,7 @@ To install the latest version use the Menu - Manage palette option and search fo
 ## Usage
 These flows create a dataset, train a model and then evaluate it. Models, after training, can be use in real scenarios to make predictions.
 
-Flows and test datasets are available in the 'test' folder. Make sure that the paths specified inside the nodes' configurations are correct before trying to execute the program.  
+Flows and test datasets are available in the 'test' folder. Make sure that the paths specified inside nodes' configurations are correct before trying to execute the program.  
 **Tip:** you can run 'node-red' (or 'sudo node-red' if you are uning linux) from the folder '.node-red/node-modules/node-red-contrib-machine-learning' and the paths will be automatically correct.
 
 This flow loads a csv file, shuffles it and creates a trainig and a test partition.
