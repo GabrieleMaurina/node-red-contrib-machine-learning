@@ -34,7 +34,7 @@ while True:
 	if config['classifier'] == 'decision-tree-classifier':
 		from sklearn.tree import DecisionTreeClassifier
 		classifier = SKLW(path=save, model=DecisionTreeClassifier(**config['kwargs']))
-	elif config['classifier'] == 'deep-neural-network-classifier':
+	elif config['classifier'] == 'deep-neural-network-classifier-tensorflow':
 		from dnnctf import DNNCTF
 		classifier = DNNCTF(path=save, del_prev_mod=True, **config['kwargs'])
 	if config['classifier'] == 'elliptic-envelope-classifier':

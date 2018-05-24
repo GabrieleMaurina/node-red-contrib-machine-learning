@@ -1,5 +1,5 @@
 module.exports = function(RED){
-	function dNNCNode(config){
+	function dNNCTNode(config){
 		const path = require('path')
 		const utils = require('../../../utils/utils')
 
@@ -9,7 +9,7 @@ module.exports = function(RED){
 		node.file = __dirname +  '/../trainer.py'
 
 		node.config = {
-			classifier: 'deep-neural-network-classifier',
+			classifier: 'deep-neural-network-classifier-tensorflow',
 			save: path.join(config.savePath, config.saveName),
 			kwargs: {
 				layers: utils.listOfInt(config.layers) || undefined,
@@ -21,5 +21,5 @@ module.exports = function(RED){
 
 		utils.run(RED, node, config)
 	}
-	RED.nodes.registerType("deep neural network classifier", dNNCNode);
+	RED.nodes.registerType("deep neural network classifier tensorflow", dNNCTNode);
 }

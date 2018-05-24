@@ -1,5 +1,5 @@
 <script type="text/javascript">
-RED.nodes.registerType('deep neural network classifier',{
+RED.nodes.registerType('deep neural network classifier tensorflow',{
   category: 'machine learning',
   color: '#DAC4B4',
   defaults: {
@@ -15,12 +15,12 @@ RED.nodes.registerType('deep neural network classifier',{
   outputs:2,
   icon: "file.png",
   label: function() {
-    return this.name||"deep neural network classifier";
+    return this.name||"deep neural network classifier tensorflow";
   }
 });
 </script>
 
-<script type="text/x-red" data-template-name="deep neural network classifier">
+<script type="text/x-red" data-template-name="deep neural network classifier tensorflow">
   <div class="form-row">
     <label for="node-input-name"><i class="icon-tag"></i>Name</label>
     <input type="text" id="node-input-name" placeholder="Name">
@@ -51,8 +51,9 @@ RED.nodes.registerType('deep neural network classifier',{
   </div>
 </script>
 
-<script type="text/x-red" data-help-name="deep neural network classifier">
-  <p>A node that trains a Deep Neural Network Classifier model.</p>
+<script type="text/x-red" data-help-name="deep neural network classifier tensorflow">
+  <p>A node that trains a Deep Neural Network Classifier model from Tensorflow library.</p>
+  <p>Do not use this node without a proper installation of Tensorflow.</p>
 
 	<h3>Inputs</h3>
 	<dl class="message-properties">
