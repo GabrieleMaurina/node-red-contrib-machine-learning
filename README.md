@@ -4,7 +4,7 @@ Such nodes have a python core that takes advantage of common ML libraries such a
 Classification and outlier detection can be performed through the use of this package.
 
 ## Pre requisites
-Install the following python libraries
+Install python and the following libraries:
 * [Python](https://www.python.org/ "Python") 3.6.4 or higher accessible by the command 'python' (on linux 'python3')
 * [Numpy](http://www.numpy.org/ "Numpy")
 * [Pandas](https://pandas.pydata.org/ "Pandas")
