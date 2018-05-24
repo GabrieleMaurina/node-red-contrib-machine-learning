@@ -5,7 +5,7 @@ Classification and outlier detection can be performed through the use of this pa
 
 ## Pre requisites
 Install the following python libraries
-* [Python](https://www.python.org/ "Python") 3.6.4 or higher accessible with the command 'python' (on linux 'python3')
+* [Python](https://www.python.org/ "Python") 3.6.4 or higher accessible by the command 'python' (on linux 'python3')
 * [Numpy](http://www.numpy.org/ "Numpy")
 * [Pandas](https://pandas.pydata.org/ "Pandas")
 * [SciKit-Learn](http://scikit-learn.org "SciKit-Learn")
