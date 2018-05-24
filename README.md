@@ -17,13 +17,23 @@ To install the latest version use the Menu - Manage palette option and search fo
     npm i node-red-contrib-machine-learning
 
 ## Usage
-These flows create datasets, train models and then evaluate them. Models, after training, can be use in real scenarios to make predictions.
-The flows and the test datasets are available in the 'test' folder.
+These flows create a dataset, train a modes and then evaluate it. Models, after training, can be use in real scenarios to make predictions.
 
-Classification
-![classification](https://i.imgur.com/GGBSYH3.png "Training, classification and evaluation")
-Outlier detection
-![outlier detection](https://i.imgur.com/pyj0ROd.png "Training, outlier detection and evaluation")
+Flows and the test datasets are available in the 'test' folder. Make sure that the paths specified in the nodes' configurations are correct before trying to execute the program.
+**Tip:** you can run 'node-red' (or 'sudo node-red' if you are uning linux) from the folder '.node-red/node-modules/node-red-contrib-machine-learning' and the paths will be automatically correct.
+
+This flow loads a csv file, shuffles it and creates a trainig and a test partition.
+![Dataset creation](https://i.imgur.com/ZkbhbTF.png "Dataset creation")
+
+This flow loads a training partition and trains a 'decision tree classifier', saving the model locally.
+![Training](https://i.imgur.com/yncaHql.png "Training")
+
+This flow loads a test partition and evaluates a previously trained model.
+![Evaluation](https://i.imgur.com/oMCfaBO.png "Evaluation")
+
+This flow shows how to use a trained model during deploymnet.
+Data is received via mqtt, predictions are made and then sent back.
+![Deployment](https://i.imgur.com/an7FwAC.png "Deployment")
 
 Example flows available here:
 ```json
