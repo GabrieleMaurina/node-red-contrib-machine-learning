@@ -5,11 +5,11 @@ Classification and outlier detection can be performed through the use of this pa
 
 ## Pre requisites
 Install the following python libraries
-* Python 3.6.4 or higher accessible with the command 'python' (on linux 'python3')
-* Numpy
-* Pandas
-* SciKit-Learn
-* Tensorflow (optional)
+* [Python](https://www.python.org/ "Python") 3.6.4 or higher accessible with the command 'python' (on linux 'python3')
+* [Numpy](http://www.numpy.org/ "Numpy")
+* [Pandas](https://pandas.pydata.org/ "Pandas")
+* [SciKit-Learn](http://scikit-learn.org "SciKit-Learn")
+* [Tensorflow](https://www.tensorflow.org/ "Tensorflow") (optional: can be skipped)
 
 ## Install
 To install the latest version use the Menu - Manage palette option and search for node-red-contrib-machine-learning, or run the following command in your Node-RED user directory (typically ~/.node-red):
@@ -17,9 +17,9 @@ To install the latest version use the Menu - Manage palette option and search fo
     npm i node-red-contrib-machine-learning
 
 ## Usage
-These flows create a dataset, train a modes and then evaluate it. Models, after training, can be use in real scenarios to make predictions.
+These flows create a dataset, train a model and then evaluate it. Models, after training, can be use in real scenarios to make predictions.
 
-Flows and the test datasets are available in the 'test' folder. Make sure that the paths specified in the nodes' configurations are correct before trying to execute the program.
+Flows and test datasets are available in the 'test' folder. Make sure that the paths specified inside the nodes' configurations are correct before trying to execute the program.  
 **Tip:** you can run 'node-red' (or 'sudo node-red' if you are uning linux) from the folder '.node-red/node-modules/node-red-contrib-machine-learning' and the paths will be automatically correct.
 
 This flow loads a csv file, shuffles it and creates a trainig and a test partition.
@@ -31,8 +31,7 @@ This flow loads a training partition and trains a 'decision tree classifier', sa
 This flow loads a test partition and evaluates a previously trained model.
 ![Evaluation](https://i.imgur.com/oMCfaBO.png "Evaluation")
 
-This flow shows how to use a trained model during deploymnet.
-Data is received via mqtt, predictions are made and then sent back.
+This flow shows how to use a trained model during deploymnet. Data is received via mqtt, predictions are made and then sent back.  
 ![Deployment](https://i.imgur.com/an7FwAC.png "Deployment")
 
 Example flows available here:
