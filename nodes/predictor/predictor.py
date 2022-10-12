@@ -23,6 +23,7 @@ model = load()
 while True:
 	#read request
 	features = pandas.read_json(input(), orient='values')
+	del features['Iris-setosa'] 
 
 	if model is None:
 		model = load()
